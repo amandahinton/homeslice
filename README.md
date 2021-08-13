@@ -34,7 +34,7 @@ Homeslice can be found at: https://homesliceapp.herokuapp.com/
   * One user has one or more homes, which is the recipient of one or more bookings
 * Bookings
   * Authenticated Users can book an event for their home
-  * Authenticated users can delete or update their home's bookings
+  * Authenticated users can delete or edit (title, description, time interval) their home's bookings
   * When an event is completed, it can be rescheduled at the specified recurrence (number of days later)
   * Bookings display in chronological order, so user can quickly see their next upcoming event
 * Events
