@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-// All URLs of routes in api router prefixed with /api
 
+// All URLs of routes in api router prefixed with /api
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 
@@ -11,10 +11,6 @@ const { setTokenCookie } = require('../../utils/auth.js');
 const { User } = require('../../db/models');
 const { restoreUser } = require('../../utils/auth.js');
 const { requireAuth } = require('../../utils/auth.js');
-
-// router.post('/test', function (req, res) {
-//   res.json({ requestBody: req.body });
-// });
 
 router.get('/set-token-cookie', asyncHandler(async (req, res) => {
   const user = await User.findOne({

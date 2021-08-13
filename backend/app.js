@@ -38,7 +38,7 @@ app.use(
 
 app.use(routes);      // connect all routes
 
-///// error-handling middlewares /////
+////// error-handling middlewares //////
 app.use((_req, _res, next) => {     // catch unhandled requests and forward to error handler
   const err = new Error("The requested resource could not be found.");
   err.title = "Resource Not Found";

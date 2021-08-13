@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   },
-  {     // protect sensitive user info, not exposed to other users0
+  {     // protect sensitive user info, not exposed to other users
     defaultScope: {
       attributes: {
         exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
@@ -74,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     }
   };
-  User.signup = async function ({ username, email, password }) {      // hash password and create user 
+  User.signup = async function ({ username, email, password }) {      // hash password and create user
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
