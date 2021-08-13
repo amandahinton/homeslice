@@ -17,7 +17,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <h1>You made it home</h1>
+            <h1>Welcome home!</h1>
           </Route>
         </Switch>
       )}

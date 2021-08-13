@@ -28,7 +28,7 @@ function LoginForm() {
         Username or Email
         <input
           type="text"
-          value={credential}  // controlled input for username/email
+          value={credential}      // controlled input for username/email
           onChange={(e) => setCredential(e.target.value)}
           required
         />
