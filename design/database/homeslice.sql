@@ -29,9 +29,9 @@ CREATE TABLE "events" (
   "id" SERIAL PRIMARY KEY,
   "title" varchar,
   "description" text,
-  "image" varchar,
-  "icon" varchar,
-  "repeatInDays" integer,
+  "imageUrl" varchar,
+  "iconClass" varchar,
+  "intervalDays" integer,
   "createdAt" timestamp,
   "updatedAt" timestamp
 );
@@ -53,6 +53,10 @@ CREATE TABLE "events_categories" (
 
 CREATE TABLE "bookings" (
   "id" SERIAL PRIMARY KEY,
+  "date" date,
+  "title" varchar,
+  "description" text,
+  "intervalDays" integer,
   "homeId" integer,
   "eventId" integer,
   "createdAt" timestamp,
