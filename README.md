@@ -8,9 +8,8 @@ Homeslice can be found at: https://homesliceapp.herokuapp.com/
 * You can read more about the project using the wiki located at: https://github.com/amandahinton/homeslice
 * To start a development environment:
   1. Clone the repository at: https://github.com/amandahinton/homeslice
-  2. Run the command "npm install" from the project root in your terminal to install dependencies
-  3. Run the command "npm start" to launch the server
-  4. Navigate to the localhost port specified in config/index.js
+  2. Run the command "npm install" inside both the frontend and backend directories to install dependencies
+  3. Run the command "npm start" from both the frontend and backend directories to launch the servers
 
 ## Technologies Used
 * Javascript
@@ -28,8 +27,8 @@ Homeslice can be found at: https://homesliceapp.herokuapp.com/
 
 ##  Features
 * Users
-  * User functionality including registration, Login/Logout authentication, and authorization to perform different CRUD operations throughout the site.
-  * The Bcrypt hashing algorithm is used to maintain password security
+  * User functionality including registration, Login/Logout authentication, and authorization to perform different CRUD operations throughout the site
+  * Bcrypt hashing algorithm used to maintain password security
   * All forms are protected against csurf attacks
 * Homes
   * One user has one or more homes, which is the recipient of one or more bookings
