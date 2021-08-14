@@ -1,6 +1,6 @@
 # Homeslice
 
-Homeslice is an app for homeowners to manage maintenance and repair (M+R) acitivities for their home/s. Users can subscribe to suggested routine M+R events or create their own custom ones. Now homeowners can stay on top of the recurring needs of the property—from roof inspection to gutter cleaning to appliance upkeep—extending and protecting the value and safety of their property. 
+Homeslice is an app for homeowners to manage maintenance and repair (M+R) activities for their home/s. Users can subscribe to suggested routine M+R events or create their own custom ones. Now homeowners can stay on top of the recurring needs of the property—from roof inspection to gutter cleaning to appliance upkeep—extending and protecting the value and safety of their property. 
 
 Homeslice can be found at: https://homesliceapp.herokuapp.com/
 
