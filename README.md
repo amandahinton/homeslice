@@ -1,6 +1,6 @@
 # Homeslice
 
-Homeslice is an app for homeowners to manage maintenance and repair (M+R) acitivities for their home/s. Users can subscribe to suggested routine M+R events or create their own custom ones. Now homeowners can stay on top of the recurring needs of the property—from roof inspection to gutter cleaning to appliance upkeep—extending and protecting the value and safety of their property. 
+Homeslice is an app for homeowners to manage maintenance and repair (M+R) activities for their home/s. Users can subscribe to suggested routine M+R events or create their own custom ones. Now homeowners can stay on top of the recurring needs of the property—from roof inspection to gutter cleaning to appliance upkeep—extending and protecting the value and safety of their property. 
 
 Homeslice can be found at: https://homesliceapp.herokuapp.com/
 
@@ -34,7 +34,7 @@ Homeslice can be found at: https://homesliceapp.herokuapp.com/
   * One user has one or more homes, which is the recipient of one or more bookings
 * Bookings
   * Authenticated Users can book an event for their home
-  * Authenticated users can delete or update their home's bookings
+  * Authenticated users can delete or edit (title, description, time interval) their home's bookings
   * When an event is completed, it can be rescheduled at the specified recurrence (number of days later)
   * Bookings display in chronological order, so user can quickly see their next upcoming event
 * Events
