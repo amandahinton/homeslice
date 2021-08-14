@@ -17,6 +17,7 @@ CREATE TABLE "homes" (
   "state" varchar,
   "zipcode" varchar,
   "userId" integer,
+  "photoUrl" varchar,
   "sqft" integer,
   "beds" integer,
   "baths" integer,
