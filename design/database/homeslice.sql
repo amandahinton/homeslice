@@ -16,7 +16,7 @@ CREATE TABLE "homes" (
   "city" varchar,
   "state" varchar,
   "zipcode" varchar,
-  "userId" int,
+  "userId" integer,
   "sqft" integer,
   "beds" integer,
   "baths" integer,
@@ -29,9 +29,9 @@ CREATE TABLE "events" (
   "id" SERIAL PRIMARY KEY,
   "title" varchar,
   "description" text,
+  "intervalDays" integer,
   "imageUrl" varchar,
   "iconClass" varchar,
-  "intervalDays" integer,
   "createdAt" timestamp,
   "updatedAt" timestamp
 );
