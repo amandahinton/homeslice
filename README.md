@@ -29,16 +29,15 @@ Homeslice can be found at: https://homesliceapp.herokuapp.com/
 See full feature list, user stories, and more at: https://github.com/amandahinton/homeslice/wiki
 * Users
   * User signup, login/logout authentication, and authorization to perform operations throughout the site
-  * Bcrypt hashing algorithm used to maintain password security
-  * All forms are protected against csurf attacks
+  * Bcrypt password hashing and protection from csurf attacks
 * Homes
   * One user has one or more homes, which is the recipient of one or more bookings
 * Events
   * A list of suggested events can be browsed by the user
-  * Users can also create custom bookingsm from an event template
   * An event may have one or more categories 
 * Bookings
   * Users can view, add, edit, or delete bookings for their home
+  * Users can also create a custom booking from an event template
   * When an event is completed, it can be rescheduled at the specified recurrence (number of days later)
 
 ## Challenges and Learnings
@@ -49,4 +48,3 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
 ![](https://github.com/amandahinton/homeslice/blob/main/design/database/homeslice_schema.png)
 
 ## Created by [Amanda Hinton](https://github.com/amandahinton)
-
