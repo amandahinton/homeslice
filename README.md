@@ -45,6 +45,6 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
 ## Code Highlights
 
 ## Database Structure
-![](https://github.com/amandahinton/homeslice/blob/main/design/database/homeslice_schema.png)
+![](https://github.com/amandahinton/homeslice/blob/main/design/database/database_schema.png)
 
 ## Created by [Amanda Hinton](https://github.com/amandahinton)
