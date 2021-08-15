@@ -32,7 +32,6 @@ CREATE TABLE "events" (
   "description" text,
   "intervalDays" integer,
   "imageUrl" varchar,
-  "iconClass" varchar,
   "createdAt" timestamp,
   "updatedAt" timestamp
 );
@@ -40,6 +39,7 @@ CREATE TABLE "events" (
 CREATE TABLE "categories" (
   "id" SERIAL PRIMARY KEY,
   "type" varchar,
+  "iconClass" varchar,
   "createdAt" timestamp,
   "updatedAt" timestamp
 );
