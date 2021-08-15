@@ -17,14 +17,35 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 50],
+      },
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 50],
+      },
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3, 256],
+        len: [5, 250],
         isEmail: {
           msg: 'Please enter a valid email address'
         }
+      },
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 20],
       },
     },
     hashedPassword: {
@@ -38,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
   {     // protect sensitive user info, not exposed to other users
     defaultScope: {
       attributes: {
-        exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
+        exclude: ['hashedPassword', 'firstName', 'lastName', 'email', 'phone', 'createdAt', 'updatedAt'],
       },
     },
     scopes: {
@@ -74,17 +95,20 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     }
   };
-  User.signup = async function ({ username, email, password }) {      // hash password and create user
+  User.signup = async function ({ username, firstName, lastName, email, phone, password }) {      // hash password and create user
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
+      firstName,
+      lastName,
       email,
+      phone,
       hashedPassword,
     });
     return await User.scope('currentUser').findByPk(user.id);
   };
   User.associate = function (models) {
-    // associations can be defined here
+    User.hasMany(models.Home, { foreignKey: 'userId' });
   };
   return User;
 };
