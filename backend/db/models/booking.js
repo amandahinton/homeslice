@@ -2,7 +2,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
     date: DataTypes.DATE,
-    title: DataTypes.STRING,
+    title: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 255],
+      },
+    },
     description: DataTypes.TEXT,
     intervalDays: DataTypes.INTEGER,
     homeId: DataTypes.INTEGER,
