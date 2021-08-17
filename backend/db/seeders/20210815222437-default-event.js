@@ -2,25 +2,311 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+    return queryInterface.bulkInsert(
+      'Events',
+      [
+        {
+          title: "Add a custom title",
+          description: "Add a custom description",
+          intervalDays: 7,
+          imageUrl: "https://images.unsplash.com/photo-1533027182632-6342d8b45b4d",
+        },
+        {
+          title: "Check weather stripping and insulation",
+          description: "Inspect and repair weather stripping, insulation, caulking, or other seals around windows and doors",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68",
+        },
+        {
+          title: "Change HVAC filters",
+          description: "Swap out more frequently for smoke, pets, or allergens",
+          intervalDays: 90,
+          imageUrl: "https://img.grouponcdn.com/iam/ex3pZ3vWrzPbEQq3ftSg/g6-5000x3000/v1/c870x524.jpg",
+        },
+        {
+          title: "Replace water filters",
+          description: "Swap sooner if inidcator light comes on or water taste deteriorates",
+          intervalDays: 120,
+          imageUrl: "https://cdn.pixabay.com/photo/2020/06/01/22/30/water-5248696_1280.jpg",
+        },
+        {
+          title: "Clean gutters and downspouts",
+          description: "Remove leaves and debris and check for proper water runoff",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2015/11/03/18/49/house-on-the-corner-1021314_1280.jpg",
+        },
+        {
+          title: "Replace batteries in smoke and carbon monoxide detectors",
+          description: "Replace annually or when indicator chirps",
+          intervalDays: 365,
+          imageUrl: "https://www.publicdomainpictures.net/pictures/260000/nahled/smoke-detector-1525988359yEo.jpg",
+        },
+        {
+          title: "Inspect roof",
+          description: "Look for leaks and damage to shingles",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2012/11/19/16/26/house-66627_1280.jpg",
+        },
+        {
+          title: "Maintain decking or patio",
+          description: "Powerwash, repair damage, and repaint/reseal as needed",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1574120583586-de8847ae992c",
+        },
+        {
+          title: "Maintain lawn and garden",
+          description: "Water plants and lawn, weed, fertilize and remove debris",
+          intervalDays: 7,
+          imageUrl: "https://images.unsplash.com/photo-1615316073031-c1458e4582b7",
+        },
+        {
+          title: "Paint exterior",
+          description: "Repaint home exterior every 3-10 years depending on material, quality, and wear",
+          intervalDays: 1095,
+          imageUrl: "https://images.unsplash.com/photo-1512515042719-143e0afbef8d",
+        },
+        {
+          title: "Touch up interior walls, trims, and ceilings",
+          description: "Patch cracks and holes and repaint as needed",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2017/10/01/00/52/architecture-2804083_1280.jpg",
+        },
+        {
+          title: "Care for house plants",
+          description: "Water, prune, and fertilize when needed",
+          intervalDays: 7,
+          imageUrl: "https://images.unsplash.com/photo-1592150621744-aca64f48394a",
+        },
+        {
+          title: "Powerwash windows and siding",
+          description: "Rent a powerwasher and give your entire exterior a spray",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070_1280.jpg",
+        },
+        {
+          title: "Reseal kitchen and bathroom fixtures",
+          description: "Inspect all sinks, showers, tubs, and toilets for deterioration in caulk or seals",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2016/07/07/15/23/basin-1502544_1280.jpg",
+        },
+        {
+          title: "Vacuum dryer vents",
+          description: "Clean dryer exhaust vents to remove lint buildup",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2017/08/22/10/47/washing-machine-2668472_1280.jpg",
+        },
+        {
+          title: "Inspect chimney and fireplace",
+          description: "Look for creosote buildup and smoke damage, inspect flue, hearth, and exterior structure",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1612152598218-9acf01c968e3",
+        },
+        {
+          title: "Inspect sprinklers and fire extinguishers",
+          description: "Maintain chemical extinguishers based on their tags and check sprinkler system for damage or leaks",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1496745109441-36ea45fed379",
+        },
+        {
+          title: "Maintain HVAC system",
+          description: "Inspect for rust, scaling, pilot light flame color, gas sound/smell, filtration, and get serviced if needed",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2018/08/25/05/02/air-conditioner-3629396_1280.jpg",
+        },
+        {
+          title: "Drain and flush hot water heater",
+          description: "Flush the hot water and remove sediment",
+          intervalDays: 180,
+          imageUrl: "https://live.staticflickr.com/198/505143363_d2bb944e9c_b.jpg",
+        },
+        {
+          title: "Clean exhaust fans",
+          description: "Vacuum or wipe down exhaust fans in kitchen and bathrooms",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2020/04/02/09/59/stove-4994398_1280.jpg",
+        },
+        {
+          title: "Deep clean bathrooms",
+          description: "Time to scrub",
+          intervalDays: 30,
+          imageUrl: "https://cdn.pixabay.com/photo/2014/10/16/08/41/bathroom-490781_1280.jpg",
+        },
+        {
+          title: "Deep clean kitchen",
+          description: "Time to scrub",
+          intervalDays: 30,
+          imageUrl: "https://cdn.pixabay.com/photo/2016/01/31/14/32/architecture-1171462_1280.jpg",
+        },
+        {
+          title: "Organize storage and closets",
+          description: "Clean out the clutter and donate or sell unused items",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2018/08/18/22/45/closet-3615613_1280.jpg",
+        },
+        {
+          title: "Maintain refrigerator",
+          description: "Clean filters, wipe down coils, empty and clean drip trays",
+          intervalDays: 180,
+          imageUrl: "https://images.unsplash.com/photo-1588854337115-1c67d9247e4d",
+        },
+        {
+          title: "Maintain oven/range/stove",
+          description: "Deep clean, inspect gas line and elements, lubricate blower motor",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2018/02/12/19/33/kitchen-3148954_1280.jpg",
+        },
+        {
+          title: "Regrout tiles",
+          description: "Check tiles and grout for chips and cracks, grout, seal, or replace as needed",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1582667407868-07060cb5e61f",
+        },
+        {
+          title: "Prune shrubs and trees",
+          description: "Clear up branches around walkways, powerlines, and home structure, prune for healthy growth, inspect for damage",
+          intervalDays: 90,
+          imageUrl: "https://cdn.pixabay.com/photo/2015/12/21/13/03/ornamental-cherry-1102597_1280.jpg",
+        },
+        {
+          title: "Clean drains",
+          description: "Check flow, look for leaks, and santize drains in sinks, tubs, showers, and dishwashers",
+          intervalDays: 30,
+          imageUrl: "https://cdn.pixabay.com/photo/2013/11/28/09/51/water-219733_1280.jpg",
+        },
+        {
+          title: "Repair siding",
+          description: "Check for and remediate cracks in stucco, damaged siding, or missing shingles",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1488707872600-5507977fe355",
+        },
+        {
+          title: "Inspect electrical",
+          description: "Check outlets, GFI switches, fuseboxes, power cords, and accessible wiring for fraying, burn marks, and signs of damage",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2017/04/13/16/12/cable-2228016_1280.jpg",
+        },
+        {
+          title: "Inspect plumbing",
+          description: "Check accessible pipes, lawn sprinklers and hoses, and all plumbing fixtures for stability, leaks, poor flow, and insulation",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2017/08/23/10/22/tubing-2672187_1280.jpg",
+        },
+        {
+          title: "Maintain insulation",
+          description: "Check insulation in attic, crawlspace, and around plumbing, repair or replace as needed",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2013/05/20/10/38/attic-112266_1280.jpg",
+        },
+        {
+          title: "Maintain exterior vents",
+          description: "Check vents into attic, basement, or crawlspace for security and to keep pests out",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1520618698072-034e0620060f",
+        },
+        {
+          title: "Book pest services",
+          description: "Make an appointment to have annual termite inspection and routine pest prevention",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1441205153301-aa645ee46dbc",
+        },
+        {
+          title: "Fix squeaks",
+          description: "Oil or repair squeaky doors, drawers, cabinets, and windows",
+          intervalDays: 365,
+          imageUrl: "https://images.unsplash.com/photo-1472851422705-2ae0e0a551f1",
+        },
+        {
+          title: "Maintain water softener",
+          description: "Check level and add salt if needed",
+          intervalDays: 30,
+          imageUrl: "https://cdn.pixabay.com/photo/2010/12/13/10/02/bath-2192_1280.jpg",
+        },
+        {
+          title: "Deep clean appliances",
+          description: "Remove all racks and drawers and sanitize appliances' interiors and exteriors",
+          intervalDays: 180,
+          imageUrl: "https://images.unsplash.com/photo-1609766856923-7e0a0c06584d",
+        },
+        {
+          title: "Maintain window and door screens",
+          description: "Inspect screens for tears or holes and repair or replace mesh",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2015/03/12/14/43/back-porch-670293_1280.jpg",
+        },
+        {
+          title: "Check locks and latches",
+          description: "Inspect fasteners, hinges, locks, and latches on doors, windows, cabinets, and closets",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2015/12/12/15/20/door-1089638_1280.jpg",
+        },
+        {
+          title: "Clean high surfaces",
+          description: "Wipe down or dust the tops of appliances, doorways, windows, and moldings",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2016/06/15/00/49/crown-molding-1457953_1280.jpg",
+        },
+        {
+          title: "Steam clean and shampoo carpets",
+          description: "Deep clean rugs and carpets, increase frequency for pets or high traffic",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2018/07/16/20/40/vestibule-3542790_1280.jpg",
+        },
+        {
+          title: "Deep clean and wax floors",
+          description: "Scrub and wax floors, check wood, linoleum, and tiling for damage",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2016/08/01/10/37/lichtraum-1560788_1280.jpg",
+        },
+        {
+          title: "Clean ceiling fans and lights",
+          description: "Dust or wipe down fans and light fixtures",
+          intervalDays: 60,
+          imageUrl: "https://cdn.pixabay.com/photo/2014/12/06/13/04/ceiling-fan-558988_1280.jpg",
+        },
+        {
+          title: "Clean washing machine",
+          description: "Run an empty cycle with vinegar or bleach, sanitize basin, dispensers, door, gasket, and filter",
+          intervalDays: 30,
+          imageUrl: "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c",
+        },
+        {
+          title: "Flush infrequently-used drains",
+          description: "Run hot water through drains and flush toilets that are seldom used, such as in guest bathroom",
+          intervalDays: 180,
+          imageUrl: "https://cdn.pixabay.com/photo/2016/12/28/23/26/bath-1937412_1280.jpg",
+        },
+        {
+          title: "Get sewer lines cleaned",
+          description: "Have sewer pipes professionally serviced every 16-24 months",
+          intervalDays: 600,
+          imageUrl: "https://images.unsplash.com/photo-1589824783837-6169889fa20f",
+        },
+        {
+          title: "Inspect visble areas of foundation",
+          description: "Examine foundation and structure for damage,weakness, cracks, water damage, insect damage, or rot",
+          intervalDays: 180,
+          imageUrl: "https://images.unsplash.com/photo-1576941089067-2de3c901e126",
+        },
+        {
+          title: "Maintain garage door",
+          description: "Inspect and repair seals, travel, and tension on garage door",
+          intervalDays: 365,
+          imageUrl: "https://cdn.pixabay.com/photo/2014/06/21/21/20/real-estate-374190_1280.jpg",
+        },
+        {
+          title: "Drain septic tank",
+          description: "Inspect and repair seals, travel, and tension on garage door",
+          intervalDays: 365,
+          imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/39/Szambowoz_-_a_mobile_septic_tank.jpg",
+        },
+      ]
+    );
   },
-
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
-  }
+    return queryInterface.bulkDelete('Events', null, {
+      truncate: true,
+      cascade: true,
+      restartIdentity: true,
+    });
+  },
 };

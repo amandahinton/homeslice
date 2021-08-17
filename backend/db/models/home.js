@@ -1,12 +1,36 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Home = sequelize.define('Home', {
-    street: DataTypes.STRING,
-    city: DataTypes.STRING,
-    state: DataTypes.STRING,
-    zipcode: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
-    photoUrl: DataTypes.STRING,
+    street: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 100],
+      },
+    },
+    city: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 100],
+      },
+    },
+    state: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [2, 2],
+      },
+    },
+    zipcode: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [5, 10],
+      },
+    },
+    photoUrl: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 255],
+      },
+    },
     sqft: DataTypes.INTEGER,
     beds: DataTypes.INTEGER,
     baths: DataTypes.INTEGER,

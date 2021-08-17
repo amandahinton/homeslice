@@ -8,7 +8,7 @@ module.exports = {
       {
         username: 'guest',
         firstName: 'Demo',
-        lastName: 'user',
+        lastName: 'User',
         email: 'demo@user.io',
         phone: '123-456-7890',
         hashedPassword: bcrypt.hashSync('password'),
@@ -18,12 +18,11 @@ module.exports = {
         firstName: 'Wembley',
         lastName: 'Bowers',
         email: faker.internet.email(),
-        phone: faker.internet.phone_number(),
+        phone: faker.phone.phoneNumber(),
         hashedPassword: bcrypt.hashSync('carrots'),
       },
     ], {});
   },
-
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {

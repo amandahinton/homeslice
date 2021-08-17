@@ -2,25 +2,28 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+    return queryInterface.bulkInsert(
+      'Categories',
+      [
+        { type: 'custom', iconClass: "fas fa-home" },
+        { type: 'interior', iconClass: "fas fa-door-open" },
+        { type: 'exterior', iconClass: "fas fa-door-closed" },
+        { type: 'plumbing', iconClass: "fas fa-faucet" },
+        { type: 'electrical', iconClass: "lightbulb" },
+        { type: 'flora', iconClass: "fas fa-leaf" },
+        { type: 'appliances', iconClass: "fas fa- blender" },
+        { type: 'hvac', iconClass: "fas fa-fan" },
+        { type: 'structural', iconClass: "fas fa-shapes" },
+        { type: 'cleaning', iconClass: "fas fa-broom" },
+        { type: 'inspection', iconClass: "fas fa- search" }
+      ]
+    );
   },
-
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
+    return queryInterface.bulkDelete('Categories', null, {
+      truncate: true,
+      cascade: true,
+      restartIdentity: true,
+    });
   }
 };
