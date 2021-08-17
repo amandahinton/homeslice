@@ -36,7 +36,7 @@ const validateSignup = [      // validate req body keys:values for email, userna
   check('password')
     .exists({ checkFalsy: true })
     .isLength({ min: 6 })
-    .withMessage('Provide a username with at least 6 characters'),
+    .withMessage('Provide a password with at least 6 characters'),
   handleValidationErrors,
 ];
 
