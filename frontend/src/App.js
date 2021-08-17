@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import EventsList from "./components/EventsList";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <h1>Welcome home!</h1>
+          </Route>
+          <Route path="/events">
+            <EventsList />
           </Route>
         </Switch>
       )}
