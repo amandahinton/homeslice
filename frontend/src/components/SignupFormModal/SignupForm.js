@@ -6,7 +6,10 @@ import './SignupForm.css';
 function SignupForm() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -15,7 +18,7 @@ function SignupForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))    // dispatch signup thunk action with form values
+      return dispatch(sessionActions.signup({ username, firstName, lastName, email, phone, password }))    // dispatch signup thunk action with form values
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -39,11 +42,38 @@ function SignupForm() {
         />
       </label>
       <label>
-        Email
+        First name
+        <input
+          type="text"
+          value={firstName}  // controlled input for first name
+          onChange={(e) => setFirstName(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Last name
+        <input
+          type="text"
+          value={lastName}  // controlled input for last name
+          onChange={(e) => setLastName(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Email address
         <input
           type="text"
           value={email}  // controlled input for email
           onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Phone number
+        <input
+          type="text"
+          value={phone}  // controlled input for phone
+          onChange={(e) => setPhone(e.target.value)}
           required
         />
       </label>
