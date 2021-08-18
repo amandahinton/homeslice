@@ -29,9 +29,11 @@ export const login = (user) => async (dispatch) => {
     method: 'POST',
     body: JSON.stringify({credential, password,}),
   });
-  const data = await response.json();
-  dispatch(setUser(data.user));
-  return response;
+  await response.json();
+  window.location.reload();
+  // const data = await response.json();
+  // dispatch(setUser(data.user));
+  // return response;
 };
 
 export const signup = (user) => async (dispatch) => {
