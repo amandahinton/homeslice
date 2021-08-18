@@ -9,7 +9,8 @@ const HomeData = () => {
 
   const dispatch = useDispatch();
 
-  const homes = useSelector(state => Object.values(state.homes))
+  // const homes = useSelector(state => Object.values(state.homes))
+  useSelector(state => Object.values(state.homes))
 
   useEffect(() => {
     dispatch(fetchHomes());      // dispatch return value of thunk creator
