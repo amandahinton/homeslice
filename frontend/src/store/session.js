@@ -64,6 +64,7 @@ const sessionReducer = (state = initialState, action) => {
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;
+      window.location = "/";
       return newState;
     default:
       return state;

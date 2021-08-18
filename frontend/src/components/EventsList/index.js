@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import EventDetail from '../EventDetail';
-import SingleEvent from '../SingleEvent';
+import EventData from '../EventData';
 import { fetchEvents } from '../../store/eventsReducer';
 
 const EventsList = () => {
@@ -28,7 +28,7 @@ const EventsList = () => {
 
         <Switch>
           <Route path="/events/:id">
-            <SingleEvent events={events} />
+            <EventData events={events} />
           </Route>
         </Switch>
       </div>
