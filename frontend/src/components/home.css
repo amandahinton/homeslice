@@ -1,20 +1,23 @@
 
 .homeDataDiv {
   width: 400px;
+  margin-bottom: 50px;
 }
 
 .homeDataPhoto {
   width: 300px;
 }
 
-/* .homeDataAddress1 {
+.homeDataAddress1 {
+  font-size: 18pt;
+  color: red;
 }
 
-.homeDataAddress2 {
-}
+/* .homeDataAddress2 {
+} */
 
-.homeDataSize {
-}
+/* .homeDataSize {
+} */
 
-.homeDataYear {
+/* .homeDataYear {
 } */

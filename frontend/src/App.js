@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import EventsList from "./components/EventsList";
 import HomesList from "./components/HomesList";
+import HomeData from "./components/HomeData";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,8 +26,11 @@ function App() {
           <Route path="/events">
             <EventsList />
           </Route>
-          <Route path="/homes">
+          <Route exact path="/homes">
             <HomesList />
+          </Route>
+          <Route path="/homes/:id">
+            <HomeData />
           </Route>
         </Switch>
       )}
