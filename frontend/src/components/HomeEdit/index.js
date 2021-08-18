@@ -1,18 +1,28 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-
-import { postHome } from "../../store/homesReducer";
+import { useHistory, useParams } from "react-router-dom";
+import { fetchHomes } from '../../store/homesReducer';
+import { updateHome } from "../../store/homesReducer";
 import "../home.css"
 
-const HomeAdd = () => {
-  const sessionUser = useSelector(state => state.session.user);
+const HomeEdit = () => {
+  // const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(fetchHomes());      // dispatch return value of thunk creator
+  }, [dispatch]);
+
+  const homeData = useSelector((state) => state.homes[id]);
+  // console.log("*****", homeData?.street);
 
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [zipcode, setZipcode] = useState("");
-  const [userId, setUserId] = useState(sessionUser.id);
   const [photoUrl, setPhotoUrl] = useState("");
   const [sqft, setSqft] = useState(0);
   const [beds, setBeds] = useState(0);
@@ -20,15 +30,22 @@ const HomeAdd = () => {
   const [yearBuilt, setYearBuilt] = useState(0);
   const [errors, setErrors] = useState([]);
 
-  const dispatch = useDispatch();
-  const history = useHistory();
+  // const [street, setStreet] = useState(homeData.street);
+  // const [city, setCity] = useState(homeData.city);
+  // const [state, setState] = useState(homeData.state);
+  // const [zipcode, setZipcode] = useState(homeData.zipcode);
+  // const [photoUrl, setPhotoUrl] = useState(homeData.photoUrl);
+  // const [sqft, setSqft] = useState(homeData.sqft);
+  // const [beds, setBeds] = useState(homeData.beds);
+  // const [baths, setBaths] = useState(homeData.baths);
+  // const [yearBuilt, setYearBuilt] = useState(homeData.yearBuilt);
+  // const [errors, setErrors] = useState([]);
 
   const reset = () => {
     setStreet("");
     setCity("");
     setState("");
     setZipcode("");
-    setUserId("");
     setPhotoUrl("");
     setSqft(0);
     setBeds(0);
@@ -39,12 +56,13 @@ const HomeAdd = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newHome = {
+    const editedHome = {
+      id: homeData.id,
       street,
       city,
       state,
       zipcode,
-      userId,
+      userId: homeData.userId,
       photoUrl,
       sqft,
       beds,
@@ -52,8 +70,8 @@ const HomeAdd = () => {
       yearBuilt
     };
 
-    // const newHomeFromDb = await dispatch(postHome(newHome));
-    await dispatch(postHome(newHome));       // returns newHome from homeReducer thunk
+    // const editedHomeFromDb = await dispatch(updateHome(editedHome));
+    await dispatch(updateHome(editedHome));       // returns editedHome from homeReducer thunk
     reset();
     history.push("/")
   };
@@ -72,11 +90,11 @@ const HomeAdd = () => {
     if (photoUrl.length < 1 || photoUrl.length > 255) validationErrors.push("Link to image must be a valid URL less than 255 characters long");
 
     setErrors(validationErrors);
-  }, [street, city, state, zipcode, userId, photoUrl])
+  }, [street, city, state, zipcode, photoUrl])
 
   return (
     <div className="newHomeFormDiv">
-      <h1 className="formTitle">Add a new home</h1>
+      <h1 className="formTitle">Update home details</h1>
       <ul className="formErrors">
         {errors && errors.map(error => <li key={error}>{error}</li>)}
       </ul>
@@ -180,11 +198,11 @@ const HomeAdd = () => {
           type="submit"
           disabled={errors.length > 0}
         >
-          Add your home
+          Update your home
         </button>
       </form>
     </div>
   );
 };
 
-export default HomeAdd;
+export default HomeEdit;
