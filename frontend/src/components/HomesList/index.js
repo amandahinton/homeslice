@@ -19,7 +19,6 @@ const HomesList = () => {
     <>
     {homes && (
       <div>
-        <h1>All Homes</h1>
         <ul>
           {homes?.map(({ id, street }) => {
             return <HomeDetail key={id} id={id} street={street} />;

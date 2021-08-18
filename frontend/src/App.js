@@ -20,6 +20,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <h1>Welcome home!</h1>
+            <EventsList />
           </Route>
           <Route path="/events">
             <EventsList />
