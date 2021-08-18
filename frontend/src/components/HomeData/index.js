@@ -18,7 +18,6 @@ const HomeData = () => {
   const { id } = useParams();
 
   const homeData = useSelector((state) => state.homes[id]);
-  console.log("***********", homeData);
 
   return (
     <div className="homeDataDiv">
