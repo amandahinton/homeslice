@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import EventsList from "./components/EventsList";
+import HomesList from "./components/HomesList";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/events">
             <EventsList />
+          </Route>
+          <Route path="/homes">
+            <HomesList />
           </Route>
         </Switch>
       )}
