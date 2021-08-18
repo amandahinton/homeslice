@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');      // validate on r
 
 // middleware for formatting errors from express-validator
 const handleValidationErrors = (req, _res, next) => {
-  const validationErrors = validationResult(req); // results of check, determines body is valid
+  const validationErrors = validationResult(req);      // results of check, determines body is valid
 
   if (!validationErrors.isEmpty()) {
     const errors = validationErrors
@@ -19,5 +19,5 @@ const handleValidationErrors = (req, _res, next) => {
 };
 
 module.exports = {
-  handleValidationErrors,
+handleValidationErrors,
 };

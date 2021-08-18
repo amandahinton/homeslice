@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import EventsList from "./components/EventsList";
 import HomesList from "./components/HomesList";
 import HomeData from "./components/HomeData";
+import HomeAdd from "./components/HomeAdd";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,8 +30,11 @@ function App() {
           <Route exact path="/homes">
             <HomesList />
           </Route>
-          <Route path="/homes/:id">
+          <Route path="/homes/:id(\\d+)">
             <HomeData />
+          </Route>
+          <Route path="/homes/new">
+            <HomeAdd />
           </Route>
         </Switch>
       )}
