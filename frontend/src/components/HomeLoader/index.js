@@ -12,7 +12,7 @@ const HomeLoader = () => {
   const home = useSelector(state => state.homes[id])
 
   useEffect(() => {
-    dispatch(fetchHomes());      // dispatch return value of thunk creator
+    dispatch(fetchHomes());
   }, [dispatch]);
 
   if (home) {

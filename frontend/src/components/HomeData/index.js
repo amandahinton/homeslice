@@ -6,14 +6,12 @@ import "../home.css"
 import { fetchHomes } from '../../store/homesReducer';
 
 const HomeData = () => {
-
   const dispatch = useDispatch();
 
-  // const homes = useSelector(state => Object.values(state.homes))
   useSelector(state => Object.values(state.homes))
 
   useEffect(() => {
-    dispatch(fetchHomes());      // dispatch return value of thunk creator
+    dispatch(fetchHomes());
   }, [dispatch]);
 
   const { id } = useParams();
