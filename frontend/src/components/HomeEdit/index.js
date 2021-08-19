@@ -68,7 +68,7 @@ const HomeEdit = ({originalHome}) => {
       <div className="formTitleDiv">
         <h1 className="formTitle">Update home details</h1>
       </div>
-      <div className="formTitleDiv">
+      <div className="formErrorsDiv">
         <ul className="formErrorsList">
           {errors && errors.map(error => <li className="formErrorsItem" key={error}>{error}</li>)}
         </ul>
@@ -176,7 +176,6 @@ const HomeEdit = ({originalHome}) => {
               type="number"
               name="yearBuilt"
               min="0"
-
             />
           </label>
           <button

@@ -55,7 +55,7 @@ const HomeAdd = () => {
     // const newHomeFromDb = await dispatch(postHome(newHome));
     await dispatch(postHome(newHome));       // returns newHome from homeReducer thunk
     reset();
-    history.push("/")
+    history.push("/homes")
   };
 
   useEffect(() => {
@@ -76,113 +76,128 @@ const HomeAdd = () => {
 
   return (
     <div className="newHomeFormDiv">
-      <h1 className="formTitle">Add a new home</h1>
-      <ul className="formErrors">
-        {errors && errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <form className="newHomeForm" onSubmit={handleSubmit}>
-        <label htmlFor='street'>
-          Street
-          <input
-            value={street}
-            onChange={(event) => setStreet(event.target.value)}
-            id='street'
-            type="text"
-            name="street"
-          />
-        </label>
-        <label htmlFor='city'>
-          City
-          <input
-            value={city}
-            onChange={(event) => setCity(event.target.value)}
-            id='city'
-            type="text"
-            name="city"
-          />
-        </label>
-        <label htmlFor='state'>
-          State
-          <input
-            value={state}
-            onChange={(event) => setState(event.target.value)}
-            id='state'
-            type="text"
-            name="state"
-          />
-        </label>
-        <label htmlFor='zipcode'>
-          Zipcode
-          <input
-            value={zipcode}
-            onChange={(event) => setZipcode(event.target.value)}
-            id='zipcode'
-            type="text"
-            name="zipcode"
-          />
-        </label>
-        <label htmlFor='photoUrl'>
-          Link to photo
-          <input
-            value={photoUrl}
-            onChange={(event) => setPhotoUrl(event.target.value)}
-            id='photoUrl'
-            type="text"
-            name="photoUrl"
-          />
-        </label>
-        <label htmlFor='sqft'>
-          Square Footage
-          <input
-            value={sqft}
-            onChange={(event) => setSqft(event.target.value)}
-            id="sqft"
-            type="number"
-            name="sqft"
-            min="0"
-          />
-        </label>
-        <label htmlFor='beds'>
-          Number of bedrooms
-          <input
-            value={beds}
-            onChange={(event) => setBeds(event.target.value)}
-            id="beds"
-            type="number"
-            name="beds"
-            min="0"
-          />
-        </label>
-        <label htmlFor='baths'>
-          Number of bathrooms
-          <input
-            value={baths}
-            onChange={(event) => setBaths(event.target.value)}
-            id="baths"
-            type="number"
-            name="baths"
-            min="0"
-          />
-        </label>
-        <label htmlFor='yearBuilt'>
-          Year home was built
-          <input
-            value={yearBuilt}
-            onChange={(event) => setYearBuilt(event.target.value)}
-            id="yearBuilt"
-            type="number"
-            name="yearBuilt"
-            min="0"
-
-          />
-        </label>
-        <button
-          type="submit"
-          disabled={errors.length > 0}
-        >
-          Add your home
-        </button>
-      </form>
+      <div className="formTitleDiv">
+        <h1 className="formTitle">Add a home to your profile</h1>
+      </div>
+      <div className="formErrorsDiv">
+        <ul className="formErrorsList">
+          {errors && errors.map(error => <li className="formErrorsItem" key={error}>{error}</li>)}
+        </ul>
+      </div>
+      <div className="formFieldsDiv">
+        <form className="newHomeForm" onSubmit={handleSubmit}>
+          <label className="formLabel" htmlFor='street'>
+            Street
+            <input
+              className="formInput"
+              value={street}
+              onChange={(event) => setStreet(event.target.value)}
+              id='street'
+              type="text"
+              name="street"
+            />
+          </label>
+          <label className="formLabel" htmlFor='city'>
+            City
+            <input
+              className="formInput"
+              value={city}
+              onChange={(event) => setCity(event.target.value)}
+              id='city'
+              type="text"
+              name="city"
+            />
+          </label>
+          <label className="formLabel" htmlFor='state'>
+            State
+            <input
+              className="formInput"
+              value={state}
+              onChange={(event) => setState(event.target.value)}
+              id='state'
+              type="text"
+              name="state"
+            />
+          </label>
+          <label className="formLabel" htmlFor='zipcode'>
+            Zipcode
+            <input
+              className="formInput"
+              value={zipcode}
+              onChange={(event) => setZipcode(event.target.value)}
+              id='zipcode'
+              type="text"
+              name="zipcode"
+            />
+          </label>
+          <label className="formLabel" htmlFor='photoUrl'>
+            Link to photo
+            <input
+              className="formInput"
+              value={photoUrl}
+              onChange={(event) => setPhotoUrl(event.target.value)}
+              id='photoUrl'
+              type="text"
+              name="photoUrl"
+            />
+          </label>
+          <label className="formLabel" htmlFor='sqft'>
+            Square Footage
+            <input
+              className="formInput"
+              value={sqft}
+              onChange={(event) => setSqft(event.target.value)}
+              id="sqft"
+              type="number"
+              name="sqft"
+              min="0"
+            />
+          </label>
+          <label className="formLabel" htmlFor='beds'>
+            Number of bedrooms
+            <input
+              className="formInput"
+              value={beds}
+              onChange={(event) => setBeds(event.target.value)}
+              id="beds"
+              type="number"
+              name="beds"
+              min="0"
+            />
+          </label>
+          <label className="formLabel" htmlFor='baths'>
+            Number of bathrooms
+            <input
+              className="formInput"
+              value={baths}
+              onChange={(event) => setBaths(event.target.value)}
+              id="baths"
+              type="number"
+              name="baths"
+              min="0"
+            />
+          </label>
+          <label className="formLabel" htmlFor='yearBuilt'>
+            Year home was built
+            <input
+              className="formInput"
+              value={yearBuilt}
+              onChange={(event) => setYearBuilt(event.target.value)}
+              id="yearBuilt"
+              type="number"
+              name="yearBuilt"
+              min="0"
+            />
+          </label>
+          <button
+            className="formButton"
+            type="submit"
+            disabled={errors.length > 0}
+          >
+            Add your home
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
