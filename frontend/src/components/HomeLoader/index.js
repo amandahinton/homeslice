@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { fetchHomes } from '../../store/homesReducer';
-import HomeEdit from '../HomeEdit';
+import HomeEditForm from '../HomeEdit/HomeEditForm';
 
 const HomeLoader = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const HomeLoader = () => {
 
   if (home) {
     return (
-      <HomeEdit  originalHome={home}/>
+      <HomeEditForm  originalHome={home}/>
     );
   } else {
     return null
