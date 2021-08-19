@@ -5,41 +5,23 @@ import { fetchHomes } from '../../store/homesReducer';
 import { updateHome } from "../../store/homesReducer";
 import "../home.css"
 
-const HomeEdit = () => {
+const HomeEdit = ({originalHome}) => {
   // const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const { id } = useParams();
-
-  useEffect(() => {
-    dispatch(fetchHomes());      // dispatch return value of thunk creator
-  }, [dispatch]);
-
-  const homeData = useSelector((state) => state.homes[id]);
-  // console.log("*****", homeData?.street);
-
-  const [street, setStreet] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zipcode, setZipcode] = useState("");
-  const [photoUrl, setPhotoUrl] = useState("");
-  const [sqft, setSqft] = useState(0);
-  const [beds, setBeds] = useState(0);
-  const [baths, setBaths] = useState(0);
-  const [yearBuilt, setYearBuilt] = useState(0);
+  const homeData = originalHome;
+  console.log("OG", originalHome);
+  const [street, setStreet] = useState(homeData.street);
+  const [city, setCity] = useState(homeData.city);
+  const [state, setState] = useState(homeData.state);
+  const [zipcode, setZipcode] = useState(homeData.zipcode);
+  const [photoUrl, setPhotoUrl] = useState(homeData.photoUrl);
+  const [sqft, setSqft] = useState(homeData.sqft);
+  const [beds, setBeds] = useState(homeData.beds);
+  const [baths, setBaths] = useState(homeData.baths);
+  const [yearBuilt, setYearBuilt] = useState(homeData.yearBuilt);
   const [errors, setErrors] = useState([]);
-
-  // const [street, setStreet] = useState(homeData.street);
-  // const [city, setCity] = useState(homeData.city);
-  // const [state, setState] = useState(homeData.state);
-  // const [zipcode, setZipcode] = useState(homeData.zipcode);
-  // const [photoUrl, setPhotoUrl] = useState(homeData.photoUrl);
-  // const [sqft, setSqft] = useState(homeData.sqft);
-  // const [beds, setBeds] = useState(homeData.beds);
-  // const [baths, setBaths] = useState(homeData.baths);
-  // const [yearBuilt, setYearBuilt] = useState(homeData.yearBuilt);
-  // const [errors, setErrors] = useState([]);
 
   const reset = () => {
     setStreet("");

@@ -55,7 +55,7 @@ router.put('/:id/edit', asyncHandler(async (req, res) => {
     home.baths=baths;
     home.yearBuilt=yearBuilt;
     await home.save()
-    res.status(204).json(home);
+    res.status(200).json(home);
   } else {
     next(homeNotFoundError(homeId))
   }
