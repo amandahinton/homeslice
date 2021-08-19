@@ -16,10 +16,118 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 #modal-content {
   position: absolute;
-  background-color:white;
+  /* background-color:white; */
+}
+
+
+.editHomeFormDiv, .newHomeFormDiv, .loginFormDiv, .signupFormDiv {
+  min-width: 375px;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dfe7eb;
+  padding: 0 20px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 100px 20px #1b4b63;
+}
+
+.formTitleDiv {
+  display: flex;
+  min-width: 375px;
+  max-width: 375px;
+  background-color: #1b4b63;
+  color: white;
+  padding: 5px 20px;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.formTitle {
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  letter-spacing: .15rem;
+}
+
+.formErrorsDiv {
+  margin: 10px 15px;
+}
+
+.formErrorsList {
+  color: #8da5b1;
+  font-size: 12px;
+  font-style: italic;
+  list-style-type: none;
+  padding: 0;
+}
+
+.formErrorsItem {
+  padding: 5px 0;
+
+}
+
+
+/* .formFieldsDiv {
+
+} */
+
+
+.editHomeForm, .newHomeForm, .loginForm, .signupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  display:inline-block;
+  padding-top: 15px;
+  text-align: right;
+  font-size: 14px;
+  color: #1b4b63;
+}
+
+.formInput {
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:20px;
+  border-top: none;
+  border-left:none;
+  border-right: none;
+  border-bottom: .5px solid #8da5b1;
+  background-color: #dfe7eb;
+  font-size: 16px;
+  width: 200px;
+}
+
+textarea:focus, input:focus{
+  border: #f99c11;
+}
+
+.formButton {
+  border-radius: 10px;
+  background-color: #ff8800;
+  border: 2px solid #fbac0b;
+  color: white;
+  padding: 10px 20px;
+  margin: 25px auto 40px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.formButton:hover {
+  background-color: #fbac0b;
+  color: white;
+  border: 2px solid #f99c11;
 }
