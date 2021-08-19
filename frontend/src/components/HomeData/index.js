@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import HomeEditFormModal from "../HomeEdit"
 import { fetchHomes, deleteHome } from '../../store/homesReducer';
@@ -33,7 +33,6 @@ const HomeData = () => {
       <p className="eventDataAddress2">{homeData?.city}, {homeData?.state} {homeData?.zipcode}</p>
       <p className="eventDataSize">{homeData?.sqft} square feet, {homeData?.beds} bedrooms, {homeData?.baths} bathrooms</p>
       <p className="eventDataYear">Built in {homeData?.yearBuilt}</p>
-      {/* <Link to={`/homes/${id}/edit`}>Edit home</Link> */}
       <HomeEditFormModal />
       <button onClick={destroyHome}>Delete home</button>
     </div>

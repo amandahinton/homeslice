@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { postHome } from "../../store/homesReducer";
 import "../home.css"
+import "../../context/Modal.css"
 
 const HomeAddForm = () => {
   const sessionUser = useSelector(state => state.session.user);
@@ -69,7 +70,7 @@ const HomeAddForm = () => {
   return (
     <div className="newHomeFormDiv">
       <div className="formTitleDiv">
-        <h1 className="formTitle">Add a home to your profile</h1>
+        <h1 className="formTitle">Add home to profile</h1>
       </div>
       <div className="formErrorsDiv">
         <ul className="formErrorsList">
@@ -146,7 +147,7 @@ const HomeAddForm = () => {
             />
           </label>
           <label className="formLabel" htmlFor='beds'>
-            Number of bedrooms
+            Number of beds
             <input
               className="formInput"
               value={beds}
@@ -158,7 +159,7 @@ const HomeAddForm = () => {
             />
           </label>
           <label className="formLabel" htmlFor='baths'>
-            Number of bathrooms
+            Number of baths
             <input
               className="formInput"
               value={baths}
@@ -170,7 +171,7 @@ const HomeAddForm = () => {
             />
           </label>
           <label className="formLabel" htmlFor='yearBuilt'>
-            Year home was built
+            Year built
             <input
               className="formInput"
               value={yearBuilt}

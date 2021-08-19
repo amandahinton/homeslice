@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch} from 'react-redux';
+import "../../context/Modal.css"
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -27,75 +28,98 @@ function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Username
-        <input
-          type="text"
-          value={username}  // controlled input for username
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        First name
-        <input
-          type="text"
-          value={firstName}  // controlled input for first name
-          onChange={(e) => setFirstName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Last name
-        <input
-          type="text"
-          value={lastName}  // controlled input for last name
-          onChange={(e) => setLastName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Email address
-        <input
-          type="text"
-          value={email}  // controlled input for email
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Phone number
-        <input
-          type="text"
-          value={phone}  // controlled input for phone
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}      // controlled input for password
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+    <div className="signupFormDiv">
+      <div className="formTitleDiv">
+        <h1 className="formTitle">Signup</h1>
+      </div>
+
+      <div className="formErrorsDiv">
+        <ul className="formErrorsList">
+          {errors.map((error, idx) => <li className="formErrorsItem" key={idx}>{error}</li>)}
+        </ul>
+      </div>
+
+
+      <div className="formFieldsDiv">
+        <form className="signupForm" onSubmit={handleSubmit}>
+
+          <label className="formLabel">
+            Username
+            <input
+              className="formInput"
+              type="text"
+              value={username}  // controlled input for username
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </label>
+          <label className="formLabel">
+            First name
+            <input
+              className="formInput"
+              type="text"
+              value={firstName}  // controlled input for first name
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          </label>
+          <label className="formLabel">
+            Last name
+            <input
+              className="formInput"
+              type="text"
+              value={lastName}  // controlled input for last name
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </label>
+          <label className="formLabel">
+            Email address
+            <input
+              className="formInput"
+              type="text"
+              value={email}  // controlled input for email
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label className="formLabel">
+            Phone number
+            <input
+              className="formInput"
+              type="text"
+              value={phone}  // controlled input for phone
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+          </label>
+          <label className="formLabel">
+            Password
+            <input
+              className="formInput"
+              type="password"
+              value={password}      // controlled input for password
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <label className="formLabel">
+            Confirm Password
+            <input
+              className="formInput"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button
+            className="formButton"
+            type="submit"
+          >Sign Up</button>
+        </form>
+      </div>
+    </div >
   );
 }
 

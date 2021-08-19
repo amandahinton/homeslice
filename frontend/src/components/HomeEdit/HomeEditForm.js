@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateHome } from "../../store/homesReducer";
 import "../home.css"
+import "../../context/Modal.css"
 
 const HomeEditForm = ({ originalHome }) => {
   const dispatch = useDispatch();
@@ -64,7 +65,7 @@ const HomeEditForm = ({ originalHome }) => {
   return (
     <div className="editHomeFormDiv">
       <div className="formTitleDiv">
-        <h1 className="formTitle">Update home details</h1>
+        <h1 className="formTitle">Edit home details</h1>
       </div>
       <div className="formErrorsDiv">
         <ul className="formErrorsList">
@@ -141,7 +142,7 @@ const HomeEditForm = ({ originalHome }) => {
             />
           </label>
           <label className="formLabel" htmlFor='beds'>
-            Number of bedrooms
+            Number of beds
             <input
               className="formInput"
               value={beds}
@@ -153,7 +154,7 @@ const HomeEditForm = ({ originalHome }) => {
             />
           </label>
           <label className="formLabel" htmlFor='baths'>
-            Number of bathrooms
+            Number of baths
             <input
               className="formInput"
               value={baths}
@@ -165,7 +166,7 @@ const HomeEditForm = ({ originalHome }) => {
             />
           </label>
           <label className="formLabel" htmlFor='yearBuilt'>
-            Year home was built
+            Year built
             <input
               className="formInput"
               value={yearBuilt}
