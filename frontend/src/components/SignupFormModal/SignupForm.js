@@ -30,7 +30,7 @@ function SignupForm() {
   return (
     <div className="signupFormDiv">
       <div className="formTitleDiv">
-        <h1 className="formTitle">Signup</h1>
+        <h1 className="formTitle">Create new account</h1>
       </div>
 
       <div className="formErrorsDiv">

@@ -72,8 +72,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
   User.prototype.toSafeObject = function () {      // { User info safe to save to JWT }
-    const { id, username, email } = this;     // context is User instance
-    return { id, username, email };
+    const { id, username, firstName, lastName, email, phone } = this;     // context is User instance
+    return { id, username, firstName, lastName, email, phone };
   };
   User.prototype.validatePassword = function (password) {      // true if hashed password match
     return bcrypt.compareSync(password, this.hashedPassword.toString());

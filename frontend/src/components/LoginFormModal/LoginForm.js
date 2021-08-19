@@ -22,7 +22,7 @@ function LoginForm() {
   return (
     <div className="loginFormDiv">
       <div className="formTitleDiv">
-        <h1 className="formTitle">Login</h1>
+        <h1 className="formTitle">Log in</h1>
       </div>
       <div className="formFieldsDiv">
         <form className="loginForm" onSubmit={handleSubmit}>

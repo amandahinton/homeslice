@@ -8,6 +8,7 @@ import HomesList from "./components/HomesList";
 import HomeData from "./components/HomeData";
 import HomeAdd from "./components/HomeAdd";
 import HomeLoader from "./components/HomeLoader";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <h1>Welcome home!</h1>
-            <EventsList />
+            {/* <EventsList /> */}
           </Route>
           <Route path="/events">
             <EventsList />
@@ -42,6 +43,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
