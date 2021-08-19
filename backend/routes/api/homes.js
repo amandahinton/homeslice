@@ -32,7 +32,7 @@ const homeNotFoundError = (homeId) => {
   return error
 };
 
-router.put('/:id/edit', asyncHandler(async (req, res) => {
+router.put('/:id/edit', validateHomeUpdate, asyncHandler(async (req, res) => {
   const homeId = req.params.id
   const {street, city, state, zipcode, photoUrl, sqft, beds, baths, yearBuilt} = req.body;
   const home = await Home.findByPk(homeId)
