@@ -20,7 +20,7 @@ const HomesList = () => {
     <>
       {homes && (
         <div>
-          <ul>
+          <ul className="homeList">
             {homes?.map(({ id }) => {
               return <HomeDetail key={id} id={id} />;
             })}

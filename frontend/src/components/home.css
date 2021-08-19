@@ -1,7 +1,25 @@
 
+.homeList {
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.homeListItem {
+  background-color: #8da5b1;
+  border-radius: 10px;
+  padding: 25px;
+  list-style-type: none;
+  margin: 25px;
+}
+
 .homeDataDiv {
-  width: 400px;
-  margin-bottom: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 .homeDataPhoto {
@@ -9,15 +27,21 @@
 }
 
 .homeDataAddress1 {
-  font-size: 18pt;
-  color: red;
+  padding: 0 20px;
+  margin: 10px 0 5px;
+  font-size: 16pt;
+  color: #ff8800;
 }
 
-/* .homeDataAddress2 {
-} */
+.homeDataAddress2, .homeDataSize, .homeDataYear {
+  padding: 0 20px;
+  margin: 0;
+}
 
-/* .homeDataSize {
-} */
+.homeDataYear {
+  margin-bottom: 20px;
+}
 
-/* .homeDataYear {
-} */
+.homeChangeButtonsDiv button {
+  margin: 10px;
+}

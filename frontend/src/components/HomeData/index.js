@@ -33,8 +33,10 @@ const HomeData = () => {
       <p className="eventDataAddress2">{homeData?.city}, {homeData?.state} {homeData?.zipcode}</p>
       <p className="eventDataSize">{homeData?.sqft} square feet, {homeData?.beds} bedrooms, {homeData?.baths} bathrooms</p>
       <p className="eventDataYear">Built in {homeData?.yearBuilt}</p>
-      <HomeEditFormModal />
-      <button onClick={destroyHome}>Delete home</button>
+      <div className="homeChangeButtonsDiv">
+        <button className="secondaryButton" onClick={destroyHome}>Delete home</button>
+        <HomeEditFormModal />
+      </div>
     </div>
   );
 };

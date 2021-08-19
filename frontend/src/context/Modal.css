@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 10px;
 }
 
 #modal-background {
@@ -21,13 +21,13 @@
 
 #modal-content {
   position: absolute;
-  /* background-color:white; */
+
 }
 
 
 .editHomeFormDiv, .newHomeFormDiv, .loginFormDiv, .signupFormDiv {
-  min-width: 375px;
-  max-width: 375px;
+  min-width: 350px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,8 +40,8 @@
 
 .formTitleDiv {
   display: flex;
-  min-width: 375px;
-  max-width: 375px;
+  min-width: 350px;
+  max-width: 350px;
   background-color: #1b4b63;
   color: white;
   padding: 5px 20px;
@@ -56,10 +56,11 @@
   align-items: center;
   font-size: 32px;
   letter-spacing: .15rem;
+  color: white;
 }
 
 .formErrorsDiv {
-  margin: 10px 15px;
+  margin-top: 10px;
 }
 
 .formErrorsList {
@@ -95,11 +96,9 @@
 }
 
 .formInput {
-  /* margin-top: 5px;
-  margin-bottom: 5px; */
   display:inline-block;
   vertical-align:middle;
-  margin-left:20px;
+  margin-left:15px;
   border-top: none;
   border-left:none;
   border-right: none;

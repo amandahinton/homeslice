@@ -2,3 +2,149 @@
 * {
   font-family: 'Atkinson Hyperlegible', sans-serif;
 }
+
+#root {
+  background-color: #f5f8f9;
+}
+
+h1 {
+  color: #1b4b63;
+}
+h2 {
+  color: #ff8800;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #fbac0b;
+  border: 2px solid #f87114;
+  color: #1b4b63;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+}
+
+button:hover {
+  background-color: #f87114;
+  border: 2px solid #fbac0b;
+  color: white;
+}
+
+.secondaryButton {
+  background-color: #8da5b1;
+  border: 2px solid #1b4b63;
+  color: white;
+  font-weight: 400;
+}
+
+.secondaryButton:hover, .profileButton:hover {
+  background-color: #1b4b63;
+  border: 2px solid #8da5b1;
+}
+
+
+/* NAVIGATION */
+
+.navDiv {
+  display: grid;
+  height: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+}
+
+.navLinks {
+  display: flex;
+  grid-column-start: 1;
+  padding: 10px 0;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.pageNavLink {
+  padding: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #8da5b1
+}
+
+.logoNavLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navLogo {
+  width: 100px;
+}
+
+.buttonNavLinks {
+  display: flex;
+  grid-column-start: 3;
+  justify-content: flex-end;
+  margin-right: 25px;
+  align-items: center;
+}
+
+
+/* LOGGED IN PROFILE BUTTON */
+.profileButton {
+  max-height: 50px;
+  background-color: #8da5b1;
+  border: 2px solid #1b4b63;
+  color: white;
+  padding: 0px 8px;
+  margin: 0 ;
+  font-weight: 400;
+}
+
+.userProfile {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+#profileIcon {
+  padding: 8px 0 5px 5px;
+}
+
+.userProfileName {
+  padding: 5px;
+  margin: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.userProfileLogout {
+  margin-top: 5px;
+}
+
+.profileDropdown {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+
+/* FOOTER */
+
+
+
+.footerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 40px;
+}
+
+.footerContentDiv {
+  color: #8da5b1;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}

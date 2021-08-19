@@ -16,21 +16,32 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
         <SignupFormModal />
+        <LoginFormModal />
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Welcome  </NavLink>
-        <NavLink exact to="/homes">Homes  </NavLink>
-        <NavLink exact to="/events">Events  </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <div className="navDiv">
+
+      <div className="navLinks">
+        <div className="pageNavLink">
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/homes">Homes  </NavLink>
+        </div>
+        <div className="pageNavLink">
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/events">Events  </NavLink>
+        </div>
+      </div>
+
+      <div  className="logoNavLink">
+        <NavLink exact to="/"><img className="navLogo" src="./homeslice_logo.png" alt="logo" /></NavLink>
+      </div>
+
+      <div  className="buttonNavLinks">
+          {isLoaded && sessionLinks}
+      </div>
+    </div>
   );
 }
 

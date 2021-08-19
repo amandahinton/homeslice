@@ -5,13 +5,15 @@ import "../home.css"
 const HomeDetail = ({ id }) => {
   const homeData = useSelector((state) => state.homes[id]);
   return (
-    <li>
+    <li className="homeListItem">
+
       <div className="homeDataDiv">
-        <img className="eventDataPhoto" src={homeData?.photoUrl} alt="event" />
-        <NavLink className="eventDataAddress1" to={`/homes/${id}`}><h2>{homeData?.street}</h2></NavLink>
-        <p className="eventDataAddress2">{homeData?.city}, {homeData?.state} {homeData?.zipcode}</p>
-        <p className="eventDataSize">{homeData?.sqft} square feet, {homeData?.beds} bedrooms, {homeData?.baths} bathrooms</p>
-        <p className="eventDataYear">Built in {homeData?.yearBuilt}</p>
+        <NavLink to={`/homes/${id}`}><img className="homeDataPhoto" src={homeData?.photoUrl} alt="home" /></NavLink>
+        <NavLink to={`/homes/${id}`}><h2 className="homeDataAddress1">{homeData?.street}</h2></NavLink>
+        <p className="homeDataAddress2">{homeData?.city}, {homeData?.state} {homeData?.zipcode}</p>
+        <p className="homeDataSize">{homeData?.sqft} square feet</p>
+        <p className="homeDataSize">{homeData?.beds} bedrooms, {homeData?.baths} bathrooms</p>
+        <p className="homeDataYear">Built in {homeData?.yearBuilt}</p>
       </div>
     </li>
   );
