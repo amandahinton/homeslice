@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import HomeAddFormModal from "../HomeAdd"
 
 import HomeDetail from '../HomeDetail';
 
@@ -26,7 +27,7 @@ const HomesList = () => {
           </ul>
         </div>
       )}
-      <Link to={`/homes/new`}>Add a Home</Link>
+      <HomeAddFormModal />
     </>
   );
 };
