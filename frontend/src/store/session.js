@@ -30,10 +30,7 @@ export const login = (user) => async (dispatch) => {
     body: JSON.stringify({credential, password,}),
   });
   await response.json();
-  window.location.reload();
-  // const data = await response.json();
-  // dispatch(setUser(data.user));
-  // return response;
+  window.location = "/homes";
 };
 
 export const signup = (user) => async (dispatch) => {

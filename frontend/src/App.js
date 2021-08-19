@@ -7,7 +7,7 @@ import EventsList from "./components/EventsList";
 import HomesList from "./components/HomesList";
 import HomeData from "./components/HomeData";
 import HomeAdd from "./components/HomeAdd";
-import HomeEdit from "./components/HomeEdit";
+import HomeLoader from "./components/HomeLoader";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function App() {
             <EventsList />
           </Route>
           <Route path="/homes/:id/edit">
-            <HomeEdit />
+            <HomeLoader />
           </Route>
           <Route exact path="/homes/new">
             <HomeAdd />
