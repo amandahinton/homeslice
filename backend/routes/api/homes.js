@@ -27,21 +27,14 @@ router.post('/new', validateHomeCreate, asyncHandler(async (req, res) => {
 const homeNotFoundError = (homeId) => {
   const error = new Error()
   error.title = 'Home not found'
-  error.message = "can't find home with the id provided"
+  error.message = "Can't find home with the id provided"
   error.status = 404
   return error
 };
 
-// router.get('/:id', asyncHandler(async (req, res) => {
-//   const home = await Home.findByPk(req.params.id);
-//   res.json(home);
-// }));
-
 router.put('/:id/edit', asyncHandler(async (req, res) => {
   const homeId = req.params.id
-
   const {street, city, state, zipcode, photoUrl, sqft, beds, baths, yearBuilt} = req.body;
-
   const home = await Home.findByPk(homeId)
 
   if (home) {
@@ -60,5 +53,16 @@ router.put('/:id/edit', asyncHandler(async (req, res) => {
     next(homeNotFoundError(homeId))
   }
 }));
+
+router.delete("/:id", asyncHandler(async function (req, res) {
+  const homeId = req.params.id;
+  if (homeId) {
+    await Home.destroy({ where: { id: homeId } });
+    res.status(200).json(homeId);
+  } else {
+    next(homeNotFoundError(homeId))
+  }
+}));
+
 
 module.exports = router;
