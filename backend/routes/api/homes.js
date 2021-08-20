@@ -2,8 +2,9 @@ const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 const { requireAuth } = require('../../utils/auth.js');
 const { validateHomeCreate, validateHomeUpdate } = require('../../utils/homeValidation.js');
+const { validateBookingForm } = require('../../utils/bookingValidation.js');
 
-const { Home } = require('../../db/models');
+const { Home, Booking } = require('../../db/models');
 
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
     const homes = await Home.findAll({
@@ -62,6 +63,22 @@ router.delete("/:id", asyncHandler(async function (req, res) {
   } else {
     next(homeNotFoundError(homeId))
   }
+}));
+
+router.get('/:id/bookings', asyncHandler(async (req, res) => {
+  const thisHomeId = parseInt(req.params.id, 10)
+
+  const home = await Home.findByPk(thisHomeId);
+
+  const bookings = await Booking.findAll({
+    where: {
+      homeId: thisHomeId
+    }
+  });
+
+  console.log("+++", bookings[0].id);
+
+  res.json(bookings);
 }));
 
 

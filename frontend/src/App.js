@@ -8,6 +8,7 @@ import HomesList from "./components/HomesList";
 import HomeData from "./components/HomeData";
 import HomeAdd from "./components/HomeAdd";
 import HomeLoader from "./components/HomeLoader";
+import BookingList from "./components/BookingList";
 import Footer from "./components/Footer";
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/homes/:id/edit">
             <HomeLoader />
+          </Route>
+          <Route path="/homes/:id/bookings">
+            <BookingList />
           </Route>
           <Route exact path="/homes/new">
             <HomeAdd />

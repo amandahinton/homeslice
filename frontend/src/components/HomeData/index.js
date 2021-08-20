@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-
 import HomeEditFormModal from "../HomeEdit"
 import { fetchHomes, deleteHome } from '../../store/homesReducer';
-
+import BookingList from '../BookingList';
 import "../home.css"
 
 const HomeData = () => {
@@ -19,6 +18,7 @@ const HomeData = () => {
   const { id } = useParams();
 
   const homeData = useSelector((state) => state.homes[id]);
+
 
   const destroyHome = (e) => {
     e.preventDefault();
@@ -58,7 +58,12 @@ const HomeData = () => {
       </div>
       </div>
     </div>
+    <div className="booking-list-container">
+        <BookingList />
+    </div>
   </div>
+
+
   );
 };
 
