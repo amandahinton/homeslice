@@ -30,12 +30,12 @@ function Navigation({ isLoaded }) {
           <NavLink activeStyle={{ color: 'orange' }} exact to="/homes">Homes  </NavLink>
         </div>
         <div className="pageNavLink">
-          <NavLink activeStyle={{ color: 'orange' }} exact to="/events">Events  </NavLink>
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/events/1">Events  </NavLink>
         </div>
       </div>
 
       <div  className="logoNavLink">
-        <NavLink exact to="/"><img className="navLogo" src="./homeslice_logo.png" alt="logo" /></NavLink>
+        <NavLink exact to="/"><img className="navLogo" src="/homeslice_logo.png" alt="logo" /></NavLink>
       </div>
 
       <div  className="buttonNavLinks">

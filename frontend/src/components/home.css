@@ -1,3 +1,4 @@
+/* HOME LIST AT /HOMES */
 
 .homeList {
   display: flex;
@@ -5,9 +6,10 @@
   padding-inline-start: 0;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 25px;
 }
 
-.homeListItem {
+.homeListItem, .homeDataContainer {
   background-color: #8da5b1;
   border-radius: 10px;
   padding: 25px;
@@ -26,7 +28,7 @@
   width: 300px;
 }
 
-.homeDataAddress1 {
+.homeDataAddress1, .homeDataTitle {
   padding: 0 20px;
   margin: 10px 0 5px;
   font-size: 16pt;
@@ -42,6 +44,56 @@
   margin-bottom: 20px;
 }
 
+.homeListAddButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeListAddButton button {
+  margin: 25px 0;
+}
+
+/* HOME BOOKINGS AT /HOMES/:ID */
+
+.homeDataContainer2 {
+  display: grid;
+  grid-template-rows: 10% 75% 15%;
+  min-height: 500px;
+  max-height: 500px;
+  /* background-color: white; */
+}
+
+.homeDataDiv2 {
+  grid-row-start: 1;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeDataDiv3 {
+  margin-block-start: 0;
+  grid-row-start: 2;
+  padding-top: 25px;
+  background-color: white;
+}
+
+.homeDataDiv4 {
+  grid-row-start: 3;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .homeChangeButtonsDiv button {
-  margin: 10px;
+  margin: 0 5px 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeDataBooking {
+  padding: 0 20px;
+  margin: 0 0 15px;
 }
