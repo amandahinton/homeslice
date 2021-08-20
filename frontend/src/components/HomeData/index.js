@@ -28,6 +28,7 @@ const HomeData = () => {
 
   return (
   <div className="homeList">
+
     <div className="homeDataContainer">
       <div className="homeDataDiv">
         <img className="homeDataPhoto" src={homeData?.photoUrl} alt="event" />
@@ -36,22 +37,25 @@ const HomeData = () => {
         <p className="homeDataSize">{homeData?.sqft} square feet</p>
         <p className="homeDataSize">{homeData?.beds} bedrooms, {homeData?.baths} bathrooms</p>
         <p className="homeDataYear">Built in {homeData?.yearBuilt}</p>
-      </div>
-    </div>
-    <div className="homeDataContainer">
-      <div className="homeDataContainer2">
-        <div className="homeDataDiv2">
-          <h2 className="homeDataTitle">Next task</h2>
-        </div>
-        <ul className="homeDataDiv3">
-          <li className="homeDataBooking">MVP2 pending</li>
-        </ul>
         <div className="homeDataDiv4">
           <div className="homeChangeButtonsDiv">
             <button className="secondaryButton" onClick={destroyHome}>Delete home</button>
             <HomeEditFormModal />
           </div>
         </div>
+      </div>
+    </div>
+
+    <div className="homeDataContainer">
+      <div className="homeDataDiv">
+        <h2 className="homeDataTitle">Next task</h2>
+        <p className="homeDataBooking">Next task goes here from MVP 2</p>
+        <div className="homeDataDiv4">
+        <div className="homeChangeButtonsDiv">
+          <button className="secondaryButton" >Edit task</button>
+          <button >Remove task</button>
+        </div>
+      </div>
       </div>
     </div>
   </div>

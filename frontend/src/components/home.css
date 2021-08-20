@@ -35,7 +35,7 @@
   color: #ff8800;
 }
 
-.homeDataAddress2, .homeDataSize, .homeDataYear, .homeDataBooking {
+.homeDataAddress2, .homeDataSize, .homeDataYear {
   padding: 0 20px;
   margin: 0;
 }
@@ -59,8 +59,8 @@
 .homeDataContainer2 {
   display: grid;
   grid-template-rows: 10% 75% 15%;
-  min-height: 366px;
-  max-height: 366px;
+  min-height: 500px;
+  max-height: 500px;
   /* background-color: white; */
 }
 
@@ -88,7 +88,12 @@
 }
 
 .homeChangeButtonsDiv button {
-  margin: 0 5px;
+  margin: 0 5px 15px;
   align-items: center;
   justify-content: center;
+}
+
+.homeDataBooking {
+  padding: 0 20px;
+  margin: 0 0 15px;
 }

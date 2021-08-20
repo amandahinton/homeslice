@@ -19,6 +19,11 @@ const EventsList = () => {
     <>
     {events && (
       <div>
+        <Switch>
+          <Route path="/events/:id">
+            <EventData events={events} />
+          </Route>
+        </Switch>
         <h1>Browse Events</h1>
         <ul>
           {events?.map(({ id, title }) => {
@@ -26,11 +31,7 @@ const EventsList = () => {
           })}
         </ul>
 
-        <Switch>
-          <Route path="/events/:id">
-            <EventData events={events} />
-          </Route>
-        </Switch>
+
       </div>
     )}
     </>
