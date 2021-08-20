@@ -82,6 +82,7 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
 .navLogo {
   width: 100px;
 }
@@ -94,6 +95,9 @@ button:hover {
   align-items: center;
 }
 
+.login-button {
+  margin-left:10px;
+}
 
 /* LOGGED IN PROFILE BUTTON */
 .profileButton {
