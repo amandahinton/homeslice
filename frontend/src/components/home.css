@@ -9,7 +9,7 @@
   margin-top: 25px;
 }
 
-.homeListItem {
+.homeListItem, .homeDataContainer {
   background-color: #8da5b1;
   border-radius: 10px;
   padding: 25px;
@@ -28,14 +28,14 @@
   width: 300px;
 }
 
-.homeDataAddress1 {
+.homeDataAddress1, .homeDataTitle {
   padding: 0 20px;
   margin: 10px 0 5px;
   font-size: 16pt;
   color: #ff8800;
 }
 
-.homeDataAddress2, .homeDataSize, .homeDataYear {
+.homeDataAddress2, .homeDataSize, .homeDataYear, .homeDataBooking {
   padding: 0 20px;
   margin: 0;
 }
@@ -54,8 +54,41 @@
   margin: 25px 0;
 }
 
-/* HOME DETAIL */
+/* HOME BOOKINGS AT /HOMES/:ID */
+
+.homeDataContainer2 {
+  display: grid;
+  grid-template-rows: 10% 75% 15%;
+  min-height: 366px;
+  max-height: 366px;
+  /* background-color: white; */
+}
+
+.homeDataDiv2 {
+  grid-row-start: 1;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeDataDiv3 {
+  margin-block-start: 0;
+  grid-row-start: 2;
+  padding-top: 25px;
+  background-color: white;
+}
+
+.homeDataDiv4 {
+  grid-row-start: 3;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .homeChangeButtonsDiv button {
-  margin: 10px;
+  margin: 0 5px;
+  align-items: center;
+  justify-content: center;
 }

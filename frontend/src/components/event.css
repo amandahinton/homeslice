@@ -1,18 +1,37 @@
+.eventDataContainer {
+  background-color: #8da5b1;
+  width: 300px;
+  border-radius: 10px;
+  padding: 25px;
+  list-style-type: none;
+  margin: 25px;
+}
 
 .eventDataDiv {
-  width: 600px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 .eventDataPhoto {
-  width: 400px;
-  height: 300px;
+  width: 300px;
 }
 
-/* .eventDataTitle {
+.eventDataTitle {
+  padding: 0 20px;
+  margin: 10px 0 5px;
+  font-size: 16pt;
+  color: #ff8800;
 }
 
 .eventDataDescription {
+  padding: 0 20px;
+  margin: 5px 0 10px;
 }
 
 .eventDataInterval {
-} */
+  padding: 0 20px;
+  margin-bottom: 15px;
+  margin-block-start: 0;
+}

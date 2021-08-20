@@ -8,11 +8,13 @@ const EventData = () => {
   const eventData = useSelector((state) => state.events[id]);
 
   return (
-    <div className="eventDataDiv">
-      <h1 className="eventDataTitle">{eventData?.title}</h1>
-      <img className="eventDataPhoto" src={eventData?.imageUrl} alt="event" />
-      <p className="eventDataDescription">{eventData?.description}</p>
-      <p className="eventDataInterval">To be completed every {eventData?.intervalDays} days</p>
+    <div className="eventDataContainer">
+      <div className="eventDataDiv">
+        <img className="eventDataPhoto" src={eventData?.imageUrl} alt="event" />
+        <h2 className="eventDataTitle">{eventData?.title}</h2>
+        <p className="eventDataDescription">{eventData?.description}</p>
+        <p className="eventDataInterval">To be completed every {eventData?.intervalDays} days</p>
+      </div>
     </div>
   );
 };
