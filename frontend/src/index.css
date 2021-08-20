@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 button {
   background-color: #fbac0b;
   border: 2px solid #f87114;
@@ -131,20 +135,25 @@ button:hover {
 
 /* FOOTER */
 
-
-
 .footerDiv {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
-  margin-top: 40px;
+  margin: 40px 0 0;
 }
 
-.footerContentDiv {
+.footerText {
   color: #8da5b1;
-  padding: 25px;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
+  margin: 40px 0 0;
+  padding: 0;
+}
+
+.footerLink a {
+  color: #ff8800;
+  margin: 0 0 40px;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

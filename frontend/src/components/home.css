@@ -1,3 +1,4 @@
+/* HOME LIST AT /HOMES */
 
 .homeList {
   display: flex;
@@ -5,6 +6,7 @@
   padding-inline-start: 0;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 25px;
 }
 
 .homeListItem {
@@ -41,6 +43,18 @@
 .homeDataYear {
   margin-bottom: 20px;
 }
+
+.homeListAddButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeListAddButton button {
+  margin: 25px 0;
+}
+
+/* HOME DETAIL */
 
 .homeChangeButtonsDiv button {
   margin: 10px;
