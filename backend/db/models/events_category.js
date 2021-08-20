@@ -1,6 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Events_Category = sequelize.define('Events_Category', {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     eventId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER
   }, {});
