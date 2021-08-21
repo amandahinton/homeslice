@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-// import HomeEditForm from './HomeEditForm';
 import HomeLoader from '../HomeLoader';
 
 function HomeEditFormModal() {

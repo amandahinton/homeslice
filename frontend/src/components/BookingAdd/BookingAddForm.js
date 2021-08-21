@@ -8,15 +8,11 @@ import "../../context/Modal.css";
 const BookingAddForm = ({homes, events}) => {
 
   const { id } = useParams();
-  console.log("IDDDD", id);
-
-  console.log("EEEEEE", events);
-  console.log("HHHHHH", homes);
 
   const [date, setDate] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [intervalDays, setIntervalDays] = useState(0);
+  const [title, setTitle] = useState(events[id].title);
+  const [description, setDescription] = useState(events[id].description);
+  const [intervalDays, setIntervalDays] = useState(events[id].intervalDays);
   const [homeId, setHomeId] = useState("");
   const [errors, setErrors] = useState([]);
 

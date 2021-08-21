@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import BookingLoader from '../BookingLoader';
+import BookingLoader from '../BookingAddLoader';
 
 function BookingAddFormModal() {
   const [showAddBookingModal, setAddBookingShowModal] = useState(false);

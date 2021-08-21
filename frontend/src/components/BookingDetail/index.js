@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import BookingEditFormModal from "../BookingEdit"
 import "../booking.css"
 
 const BookingDetail= ({id}) => {
@@ -14,6 +15,7 @@ const BookingDetail= ({id}) => {
         <h4 className="booking-list-date">Complete this on {newDate}</h4>
         <p className="booking-list-description">{bookingData?.description}</p>
         <p className="booking-list-interval">Complete this task every {bookingData?.intervalDays} days</p>
+        <BookingEditFormModal />
       </div>
     </li>
   );

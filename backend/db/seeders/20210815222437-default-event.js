@@ -8,7 +8,7 @@ module.exports = {
         {
           title: "Add a custom title",
           description: "Add a custom description",
-          intervalDays: 7,
+          intervalDays: 0,
           imageUrl: "https://images.unsplash.com/photo-1533027182632-6342d8b45b4d",
         },
         {
