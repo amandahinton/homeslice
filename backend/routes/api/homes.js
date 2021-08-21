@@ -73,13 +73,16 @@ router.get('/:id/bookings', asyncHandler(async (req, res) => {
   const bookings = await Booking.findAll({
     where: {
       homeId: thisHomeId
-    }
+    },
+    order: [['date', 'DESC']]
   });
-
-  console.log("+++", bookings[0].id);
 
   res.json(bookings);
 }));
 
+router.post('/:id/bookings/new', validateBookingForm, asyncHandler(async (req, res) => {
+    const booking = await Booking.create(req.body);
+    res.status(201).json(booking);
+}));
 
 module.exports = router;

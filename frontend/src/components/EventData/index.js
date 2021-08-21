@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import BookingAddFormModal from "../BookingAdd"
 import "../event.css"
 
 const EventData = () => {
@@ -14,6 +15,7 @@ const EventData = () => {
         <h2 className="eventDataTitle">{eventData?.title}</h2>
         <p className="eventDataDescription">{eventData?.description}</p>
         <p className="eventDataInterval">To be completed every {eventData?.intervalDays} days</p>
+        <BookingAddFormModal />
       </div>
     </div>
   );
