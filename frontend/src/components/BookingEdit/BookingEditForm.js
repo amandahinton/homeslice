@@ -7,16 +7,13 @@ import "../booking.css";
 const HomeEditForm = ({ originalBooking }) => {
   const dispatch = useDispatch();
 
-  let oldDate = originalBooking?.date
+  let oldDate = originalBooking.date
   let newDate = oldDate.slice(0,10);
 
-  // console.log("OLD DAAATTTEEE", oldDate);
-  // console.log("NEW DAAATTTEEE", newDate);
-
   const [date, setDate] = useState(newDate);
-  const [title, setTitle] = useState(originalBooking?.title);
-  const [description, setDescription] = useState(originalBooking?.description);
-  const [intervalDays, setIntervalDays] = useState(originalBooking?.intervalDays);
+  const [title, setTitle] = useState(originalBooking.title);
+  const [description, setDescription] = useState(originalBooking.description);
+  const [intervalDays, setIntervalDays] = useState(originalBooking.intervalDays);
   const [errors, setErrors] = useState([]);
 
   const reset = () => {
@@ -30,18 +27,18 @@ const HomeEditForm = ({ originalBooking }) => {
     e.preventDefault();
 
     const editedBooking = {
-      id: originalBooking?.id,
+      id: originalBooking.id,
       date,
       title,
       description,
       intervalDays,
-      homeId: originalBooking?.homeId,
-      eventId: originalBooking?.eventId
+      homeId: originalBooking.homeId,
+      eventId: originalBooking.eventId
     };
 
-    await dispatch(updateBooking(editedBooking));       // returns editedBooking from bookingReducer thunk
+    await dispatch(updateBooking(editedBooking, originalBooking.homeId));       // returns editedBooking from bookingReducer thunk
     reset();
-    window.location = `/bookings/${originalBooking?.id}`;
+    window.location = `/bookings/${originalBooking.id}`;
   };
 
   useEffect(() => {

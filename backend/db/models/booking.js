@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    date: DataTypes.DATE,
+    date: DataTypes.DATEONLY,
     title: {
       type: DataTypes.STRING,
       validate: {

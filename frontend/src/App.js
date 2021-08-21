@@ -33,6 +33,7 @@ function App() {
           <Route path="/homes/:id/edit">
             <HomeLoader />
           </Route>
+
           <Route path="/homes/:id/bookings">
             <BookingList />
           </Route>

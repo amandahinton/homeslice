@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 ////// action types //////
 const GET_BOOKINGS = 'bookings/getBookings';
+const GET_A_BOOKING = 'bookings/getABooking'
 const ADD_BOOKING = 'bookings/addBooking';
 const EDIT_BOOKING = 'bookings/editBooking';
 const REMOVE_BOOKING = 'bookings/removev';
@@ -10,6 +11,11 @@ const REMOVE_BOOKING = 'bookings/removev';
 export const getBookings = (bookings) => ({
   type: GET_BOOKINGS,
   bookings,
+});
+
+export const getABooking = (booking) => ({
+  type: GET_A_BOOKING,
+  booking,
 });
 
 export const addBooking = (newBooking) => ({
@@ -36,6 +42,14 @@ export const fetchBookings = (homeId) => async (dispatch) => {
   }
 };
 
+export const fetchABooking = (homeId, bookingId) => async (dispatch) => {
+  const res = await fetch(`/api/homes/${homeId}/bookings/${bookingId}`);
+  if (res.ok) {
+    const booking = await res.json();
+    dispatch(getABooking(booking));
+  }
+};
+
 export const postBooking = (payload) => async (dispatch) => {
   const res = await csrfFetch('/api/homes/:homeId/bookings/new', {
     method: 'POST',
@@ -49,8 +63,8 @@ export const postBooking = (payload) => async (dispatch) => {
   return newBooking;
 };
 
-export const updateBooking = (booking) => async (dispatch) => {
-  const res = await csrfFetch(`/api/homes/:homeId/bookings/${booking.id}/edit`, {
+export const updateBooking = (booking, homeId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/homes/${homeId}/bookings/${booking.id}/edit`, {
     method: 'PUT',
     body: JSON.stringify(booking),
   });
@@ -87,6 +101,11 @@ const bookingsReducer = (state = initialState, action) => {
         newState[booking.id] = booking;
       });
       return newState;
+    case GET_A_BOOKING:
+      return {
+        ...state,
+        [action.booking.id]: action.booking
+      };
     case ADD_BOOKING:
       return {
         ...state,

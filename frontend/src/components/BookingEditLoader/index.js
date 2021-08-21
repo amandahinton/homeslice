@@ -1,19 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBookings } from '../../store/bookingsReducer';
+import { fetchABooking } from '../../store/bookingsReducer';
 import { useParams } from "react-router-dom";
 import BookingEditForm from '../BookingEdit/BookingEditForm';
 
-const BookingLoader = () => {
+const BookingLoader = ( {bookingId}) => {
   const dispatch = useDispatch();
-
   const { id } = useParams();
 
-  const booking = useSelector(state => state.bookings[id])
+  const booking = useSelector(state => state.bookings[bookingId])
 
   useEffect(() => {
-    dispatch(fetchBookings());
-  }, [dispatch]);
+    dispatch(fetchABooking(id, bookingId));
+  }, [dispatch, id, bookingId]);
 
   if (booking) {
     return (
