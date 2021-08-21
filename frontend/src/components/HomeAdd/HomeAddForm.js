@@ -51,7 +51,6 @@ const HomeAddForm = () => {
       yearBuilt
     };
 
-    // const newHomeFromDb = await dispatch(postHome(newHome));
     await dispatch(postHome(newHome));       // returns newHome from homeReducer thunk
     reset();
     window.location = "/homes";

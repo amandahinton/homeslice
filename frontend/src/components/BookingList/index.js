@@ -15,7 +15,7 @@ const BookingsList = () => {
   useEffect(() => {
     dispatch(fetchBookings(id));      // dispatch return value of thunk creator
   }, [dispatch, id]);
-console.log("boooookkkings", bookings);
+
   return (
     <>
       {bookings && (

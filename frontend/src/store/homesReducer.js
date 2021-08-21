@@ -84,6 +84,7 @@ const homesReducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
     case GET_HOMES:
+      newState = {};
       action.homes.forEach((home) => {
         newState[home.id] = home;
       });

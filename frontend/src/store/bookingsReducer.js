@@ -32,7 +32,6 @@ export const fetchBookings = (homeId) => async (dispatch) => {
   const res = await fetch(`/api/homes/${homeId}/bookings`);
   if (res.ok) {
     const bookings = await res.json();
-    console.log(bookings);
     dispatch(getBookings(bookings));
   }
 };
@@ -83,9 +82,9 @@ const bookingsReducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
     case GET_BOOKINGS:
+      newState = {};
       action.bookings.forEach((booking) => {
         newState[booking.id] = booking;
-        console.log("state-booking", booking);
       });
       return newState;
     case ADD_BOOKING:
