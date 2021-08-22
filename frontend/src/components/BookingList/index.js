@@ -10,11 +10,11 @@ const BookingsList = () => {
 
   const bookings = useSelector(state => Object.values(state.bookings))
 
-  const { id } = useParams();
+  const { id : homeId} = useParams();
 
   useEffect(() => {
-    dispatch(fetchBookings(id));      // dispatch return value of thunk creator
-  }, [dispatch, id]);
+    dispatch(fetchBookings(homeId));      // dispatch return value of thunk creator
+  }, [dispatch, homeId]);
 
   return (
     <>
@@ -23,7 +23,7 @@ const BookingsList = () => {
           <h1>Tasks for this home</h1>
           <ul className="homeList">
             {bookings && bookings?.map(({ id }) => {
-              return <BookingDetail key={id} id={id} />;
+              return <BookingDetail key={id} homeId={homeId} bookingId={id} />;
             })}
           </ul>
         </div>

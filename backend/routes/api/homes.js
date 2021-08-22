@@ -25,10 +25,10 @@ router.post('/new', validateHomeCreate, asyncHandler(async (req, res) => {
   res.status(201).json(home);
 }));
 
-const homeNotFoundError = (homeId) => {
+const notFoundError = (homeId) => {
   const error = new Error()
-  error.title = 'Home not found'
-  error.message = "Can't find home with the id provided"
+  error.title = 'Resource not found'
+  error.message = "Can't find resource with the id provided"
   error.status = 404
   return error
 };
@@ -51,7 +51,7 @@ router.put('/:id/edit', validateHomeUpdate, asyncHandler(async (req, res) => {
     await home.save()
     res.status(200).json(home);
   } else {
-    next(homeNotFoundError(homeId))
+    next(notFoundError(homeId))
   }
 }));
 
@@ -61,7 +61,7 @@ router.delete("/:id", asyncHandler(async function (req, res) {
     await Home.destroy({ where: { id: homeId } });
     res.status(200).json(homeId);
   } else {
-    next(homeNotFoundError(homeId))
+    next(notFoundError(homeId))
   }
 }));
 
@@ -84,5 +84,40 @@ router.post('/:id/bookings/new', validateBookingForm, asyncHandler(async (req, r
     const booking = await Booking.create(req.body);
     res.status(201).json(booking);
 }));
+
+router.get('/:id/bookings/:bookingId', asyncHandler(async (req, res) => {
+  const booking = await Booking.findByPk(req.params.bookingId);
+  res.json(booking);
+}));
+
+router.put('/:id/bookings/:bookingId/edit', validateBookingForm, asyncHandler(async (req, res) => {
+  const bookingId = parseInt(req.params.bookingId, 10)
+  const { date, title, description, intervalDays, homeId, eventId } = req.body;
+  const booking = await Booking.findByPk(bookingId)
+
+  if (booking) {
+    booking.date = date,
+    booking.title = title,
+    booking.description = description,
+    booking.intervalDays = intervalDays,
+    booking.homeId = homeId,
+    booking.eventId = eventId
+    await booking.save()
+    res.status(200).json(booking);
+  } else {
+    next(notFoundError(bookingId))
+  }
+}));
+
+router.delete("/:id/bookings/:bookingId", asyncHandler(async function (req, res) {
+  const bookingId = req.params.bookingId;
+  if (bookingId) {
+    await Booking.destroy({ where: { id: bookingId } });
+    res.status(200).json(bookingId);
+  } else {
+    next(notFoundError(bookingId))
+  }
+}));
+
 
 module.exports = router;

@@ -25,7 +25,7 @@
 }
 
 
-.editHomeFormDiv, .newHomeFormDiv, .loginFormDiv, .signupFormDiv, .newBookingFormDiv {
+.editHomeFormDiv, .newHomeFormDiv, .loginFormDiv, .signupFormDiv, .newBookingFormDiv, .editBookingFormDiv {
   min-width: 350px;
   max-width: 350px;
   display: flex;
