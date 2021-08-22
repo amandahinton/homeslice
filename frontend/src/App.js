@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Splash from "./components/Splash";
 import EventsList from "./components/EventsList";
 import HomesList from "./components/HomesList";
 import HomeData from "./components/HomeData";
@@ -24,8 +25,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <h1>Welcome home!</h1>
-            {/* <EventsList /> */}
+            <Splash />
           </Route>
           <Route path="/events">
             <EventsList />
@@ -33,7 +33,6 @@ function App() {
           <Route path="/homes/:id/edit">
             <HomeLoader />
           </Route>
-
           <Route path="/homes/:id/bookings">
             <BookingList />
           </Route>

@@ -19,9 +19,9 @@ const BookingsList = () => {
   return (
     <>
       {bookings && (
-        <div>
-          <h1>Tasks for this home</h1>
-          <ul className="homeList">
+        <div className="booking-list-container">
+          <h1 className="booking-list-title">Tasks for this home</h1>
+          <ul className="booking-list">
             {bookings && bookings?.map(({ id }) => {
               return <BookingDetail key={id} homeId={homeId} bookingId={id} />;
             })}

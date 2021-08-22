@@ -16,12 +16,10 @@
   right: 0;
   left: 0;
   bottom: 0;
-
 }
 
 #modal-content {
   position: absolute;
-
 }
 
 
@@ -73,14 +71,7 @@
 
 .formErrorsItem {
   padding: 5px 0;
-
 }
-
-
-/* .formFieldsDiv {
-
-} */
-
 
 .editHomeForm, .newHomeForm, .loginForm, .signupForm, .newBookingForm {
   display: flex;

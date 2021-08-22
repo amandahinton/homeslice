@@ -34,7 +34,7 @@ function Navigation({ isLoaded }) {
         </div>
       </div>
 
-      <div  className="logoNavLink">
+      <div className="logoNavLink">
         <NavLink exact to="/"><img className="navLogo" src="/homeslice_logo.png" alt="logo" /></NavLink>
       </div>
 

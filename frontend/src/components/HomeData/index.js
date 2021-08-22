@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import HomeEditFormModal from "../HomeEdit"
 import { fetchHomes, deleteHome } from '../../store/homesReducer';
 import BookingList from '../BookingList';
+import BookingNext from '../BookingNext';
 import "../home.css"
 
 const HomeData = () => {
@@ -19,7 +20,6 @@ const HomeData = () => {
 
   const homeData = useSelector((state) => state.homes[id]);
 
-
   const destroyHome = (e) => {
     e.preventDefault();
     dispatch(deleteHome(id));
@@ -31,36 +31,29 @@ const HomeData = () => {
 
     <div className="homeDataContainer">
       <div className="homeDataDiv">
+        <h2 className="home-data-card-header">Your Home</h2>
         <img className="homeDataPhoto" src={homeData?.photoUrl} alt="event" />
         <h2 className="homeDataAddress1">{homeData?.street}</h2>
         <p className="homeDataAddress2">{homeData?.city}, {homeData?.state} {homeData?.zipcode}</p>
         <p className="homeDataSize">{homeData?.sqft} square feet</p>
         <p className="homeDataSize">{homeData?.beds} bedrooms, {homeData?.baths} bathrooms</p>
         <p className="homeDataYear">Built in {homeData?.yearBuilt}</p>
-        <div className="homeDataDiv4">
-          <div className="homeChangeButtonsDiv">
-            <button className="secondaryButton" onClick={destroyHome}>Delete home</button>
-            <HomeEditFormModal />
-          </div>
+        <div className="homeChangeButtonsDiv">
+          <button className="secondaryButton" onClick={destroyHome}>Delete home</button>
+          <HomeEditFormModal />
         </div>
       </div>
     </div>
 
-    <div className="homeDataContainer">
-      <div className="homeDataDiv">
-        <h2 className="homeDataTitle">Next task</h2>
-        <p className="homeDataBooking">Next task goes here from MVP 2</p>
-        <div className="homeDataDiv4">
-        <div className="homeChangeButtonsDiv">
-          <button className="secondaryButton" >Edit task</button>
-          <button >Remove task</button>
-        </div>
-      </div>
-      </div>
+
+    <div className="booking-next-container">
+        <BookingNext />
     </div>
+
     <div className="booking-list-container">
         <BookingList />
     </div>
+
   </div>
 
 

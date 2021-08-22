@@ -16,25 +16,28 @@ const EventsList = () => {
   }, [dispatch]);
 
   return (
-    <>
-    {events && (
-      <div>
-        <Switch>
-          <Route path="/events/:id">
-            <EventData events={events} />
-          </Route>
-        </Switch>
-        <h1>Browse Events</h1>
-        <ul>
-          {events?.map(({ id, title }) => {
-            return <EventDetail key={id} id={id} title={title} />;
-          })}
-        </ul>
+      <div className="all-event-page">
 
+        <div className="event-list">
+          <div className="event-list-content">
+            <h1 className="event-list-title">Browse Events</h1>
+            <ul>
+              {events && events?.map(({ id, title }) => {
+                return <EventDetail key={id} id={id} title={title} />;
+              })}
+            </ul>
+          </div>
+        </div>
+
+        <div className="event-preview">
+            <Switch>
+              <Route path="/events/:id">
+                <EventData events={events} />
+              </Route>
+            </Switch>
+        </div>
 
       </div>
-    )}
-    </>
   );
 };
 
