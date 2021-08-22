@@ -20,7 +20,7 @@ const EventsList = () => {
 
         <div className="event-list">
           <div className="event-list-content">
-            <h1 className="event-list-title">Browse Events</h1>
+            <h1 className="event-list-title">Browse Suggested Tasks</h1>
             <ul>
               {events && events?.map(({ id, title }) => {
                 return <EventDetail key={id} id={id} title={title} />;

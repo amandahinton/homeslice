@@ -8,6 +8,7 @@ const BookingDetail = ({bookingId, homeId}) => {
 
   const destroyBooking = (e) => {
     e.preventDefault();
+    window.confirm("Sure you want to delete this task?")
     dispatch(deleteBooking(bookingId, homeId));
     window.location.reload();
   };

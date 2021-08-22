@@ -14,6 +14,14 @@ function SignupForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
+  //demo user login
+  const user = { credential: "guest", password: "password" }
+
+  const demoLogin = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.login(user));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
@@ -119,7 +127,14 @@ function SignupForm() {
           >Sign Up</button>
         </form>
       </div>
-    </div >
+      <div className="demo-user-div">
+        <p className="demo-user-prompt">Want to take a look around first?</p>
+        <p className="demo-user-prompt">Sign in to the demo account.</p>
+        <button className="secondaryButton" id="demo-user-button" onClick={demoLogin}>
+          Try it out
+        </button>
+      </div>
+    </div>
   );
 }
 

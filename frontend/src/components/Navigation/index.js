@@ -7,12 +7,24 @@ import SignupFormModal from '../SignupFormModal';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
-
   let sessionLinks;
+  let pageLinks;
+
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser} />
     );
+    pageLinks = (
+      <div className="navLinks">
+        <div className="pageNavLink">
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/homes">Your home  </NavLink>
+        </div>
+        <div className="pageNavLink">
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/events/1">Add tasks  </NavLink>
+        </div>
+      </div>
+    );
+
   } else {
     sessionLinks = (
       <>
@@ -24,15 +36,17 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="navDiv">
-
       <div className="navLinks">
-        <div className="pageNavLink">
-          <NavLink activeStyle={{ color: 'orange' }} exact to="/homes">Homes  </NavLink>
-        </div>
-        <div className="pageNavLink">
-          <NavLink activeStyle={{ color: 'orange' }} exact to="/events/1">Events  </NavLink>
-        </div>
+        {isLoaded && pageLinks}
       </div>
+      {/* <div className="navLinks">
+        <div className="pageNavLink">
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/homes">Your home  </NavLink>
+        </div>
+        <div className="pageNavLink">
+          <NavLink activeStyle={{ color: 'orange' }} exact to="/events/1">Add tasks  </NavLink>
+        </div>
+      </div> */}
 
       <div className="logoNavLink">
         <NavLink exact to="/"><img className="navLogo" src="/homeslice_logo.png" alt="logo" /></NavLink>

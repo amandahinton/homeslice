@@ -58,6 +58,7 @@ router.put('/:id/edit', validateHomeUpdate, asyncHandler(async (req, res) => {
 router.delete("/:id", asyncHandler(async function (req, res) {
   const homeId = req.params.id;
   if (homeId) {
+    await Booking.destroy( { where: { homeId }})
     await Home.destroy({ where: { id: homeId } });
     res.status(200).json(homeId);
   } else {
