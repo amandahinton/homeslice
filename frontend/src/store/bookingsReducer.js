@@ -76,7 +76,8 @@ export const updateBooking = (booking, homeId) => async (dispatch) => {
   return editedBooking;
 };
 
-export const deleteBooking = ({bookingId, homeId}) => async (dispatch) => {
+export const deleteBooking = (bookingId, homeId) => async (dispatch) => {
+
   const res = await csrfFetch(`/api/homes/${homeId}/bookings/${bookingId}`, {
     method: 'DELETE',
   });

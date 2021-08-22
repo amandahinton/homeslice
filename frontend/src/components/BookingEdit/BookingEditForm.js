@@ -38,7 +38,7 @@ const HomeEditForm = ({ originalBooking }) => {
 
     await dispatch(updateBooking(editedBooking, originalBooking.homeId));       // returns editedBooking from bookingReducer thunk
     reset();
-    window.location = `/bookings/${originalBooking.id}`;
+    window.location.reload();
   };
 
   useEffect(() => {

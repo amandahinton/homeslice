@@ -109,5 +109,15 @@ router.put('/:id/bookings/:bookingId/edit', validateBookingForm, asyncHandler(as
   }
 }));
 
+router.delete("/:id/bookings/:bookingId", asyncHandler(async function (req, res) {
+  const bookingId = req.params.bookingId;
+  if (bookingId) {
+    await Booking.destroy({ where: { id: bookingId } });
+    res.status(200).json(bookingId);
+  } else {
+    next(notFoundError(bookingId))
+  }
+}));
+
 
 module.exports = router;
