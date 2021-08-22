@@ -9,6 +9,15 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
+  //demo user login
+  const user = {credential: "guest", password: "password"}
+
+  const demoLogin = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.login(user));
+  };
+
+  // log in form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -21,9 +30,11 @@ function LoginForm() {
 
   return (
     <div className="loginFormDiv">
+
       <div className="formTitleDiv">
         <h1 className="formTitle">Log in</h1>
       </div>
+
       <div className="formFieldsDiv">
         <form className="loginForm" onSubmit={handleSubmit}>
           <ul>
@@ -54,6 +65,13 @@ function LoginForm() {
             type="submit"
           >Log In</button>
         </form>
+      </div>
+      <div className="demo-user-div">
+        <p className="demo-user-prompt">Want to take a look around first?</p>
+        <p className="demo-user-prompt">Sign in to the demo account.</p>
+        <button className="secondaryButton" id="demo-user-button" onClick={demoLogin}>
+          Try it out
+        </button>
       </div>
     </div>
   );

@@ -10,6 +10,17 @@ const BookingsList = () => {
 
   const bookings = useSelector(state => Object.values(state.bookings))
 
+  const sortedBookings = bookings.sort((a, b) => {
+    if (a.date < b.date) {
+      return -1;
+    } else if (a.date === b.date) {
+      return 0;
+    } else {
+      return 1;
+    }
+  })
+
+
   const { id : homeId} = useParams();
 
   useEffect(() => {
@@ -22,7 +33,7 @@ const BookingsList = () => {
         <div className="booking-list-container">
           <h1 className="booking-list-title">Tasks for this home</h1>
           <ul className="booking-list">
-            {bookings && bookings?.map(({ id }) => {
+            {sortedBookings && sortedBookings?.map(({ id }) => {
               return <BookingDetail key={id} homeId={homeId} bookingId={id} />;
             })}
           </ul>

@@ -46,8 +46,9 @@ const BookingAddForm = ({homes, events}) => {
     const validationErrors = [];
     if (!date) validationErrors.push("Select a valid date for task to be completed by");
     if (title.length < 1 || title.length > 255) validationErrors.push("Title must be between 1 and 255 characters long");
+    if (!homeId) validationErrors.push("Select a home for this task");
     setErrors(validationErrors);
-  }, [date, title])
+  }, [date, title, homeId])
 
   return (
     <div className="newBookingFormDiv">
@@ -107,12 +108,18 @@ const BookingAddForm = ({homes, events}) => {
             />
           </label>
           <label className="formLabel">
-          Select home
+          Home
             <select
               className="formInput"
               value={homeId}
               onChange={(event) => setHomeId(event.target.value)}
             >
+              <option
+                value={null}
+              >
+                Select a home
+              </option>
+
               {Object.values(homes).map(home => (
                 <option
                   key={home.id}

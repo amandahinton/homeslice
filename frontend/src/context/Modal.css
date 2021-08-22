@@ -121,3 +121,21 @@ textarea:focus, input:focus{
   color: white;
   border: 2px solid #f99c11;
 }
+
+
+.demo-user-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-user-prompt {
+  color: #8da5b1;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+#demo-user-button {
+  margin: 15px 0 25px;
+}

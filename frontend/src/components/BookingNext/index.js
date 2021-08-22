@@ -13,7 +13,17 @@ const BookingsNext = () => {
 
   const events = useSelector(state => state.events)
 
-  const bookingData = bookings[0]
+
+  const sortedBookings = bookings.sort((a, b) => {
+    if (a.date < b.date) {
+      return -1;
+    } else if (a.date === b.date) {
+      return 0;
+    } else {
+      return 1;
+    }
+  })
+  const bookingData = sortedBookings[0]
 
   const { id: homeId } = useParams();
 
@@ -27,6 +37,7 @@ const BookingsNext = () => {
 
   const destroyBooking = (e) => {
     e.preventDefault();
+    window.confirm("Sure you want to delete this task?")
     dispatch(deleteBooking(bookingData?.id, homeId));
     window.location.reload();
   };
