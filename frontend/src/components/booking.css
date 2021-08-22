@@ -1,0 +1,114 @@
+.booking-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   margin-top: 25px;
+}
+
+.booking-list-title {
+  color: #8da5b1;
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.booking-list-item {
+  border: 2px solid #8da5b1;
+  width: 250px;
+  border-radius: 10px;
+  padding: 20px;
+  list-style-type: none;
+  margin: 15px;
+}
+
+.booking-list-item-div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.booking-list-item-text {
+  flex-grow: 1;
+}
+
+.booking-list-title {
+  color: #1b4b63;
+}
+
+.bookingChangeButtonsDiv {
+  justify-content: flex-end;
+}
+
+
+
+/* NEXT BOOKING ON /HOMES/:ID */
+
+.booking-next-container {
+  background-color: #8da5b1;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 25px;
+}
+
+.booking-next-div-content {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.booking-next-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-next-photo {
+  width: 300px;
+}
+
+.booking-next-title {
+  padding: 0 20px;
+  margin: 5px 0 5px;
+  color: #1b4b63;
+}
+
+.booking-next-subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 10px;
+  color: #8da5b1;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.booking-next-date {
+  padding: 0 20px 5px;
+  margin: 0;
+}
+
+.booking-next-description, .booking-next-interval {
+  padding: 0 20px 5px;
+  margin: 0 0 15px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.booking-next-div-buttons {
+  grid-row-start: 3;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 15px;
+}

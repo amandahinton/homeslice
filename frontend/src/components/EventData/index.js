@@ -15,7 +15,9 @@ const EventData = () => {
         <h2 className="eventDataTitle">{eventData?.title}</h2>
         <p className="eventDataDescription">{eventData?.description}</p>
         <p className="eventDataInterval">To be completed every {eventData?.intervalDays} days</p>
-        <BookingAddFormModal />
+       <div className="event-data-add-form">
+          <BookingAddFormModal />
+       </div>
       </div>
     </div>
   );
