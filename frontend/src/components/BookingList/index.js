@@ -27,20 +27,27 @@ const BookingsList = () => {
     dispatch(fetchBookings(homeId));      // dispatch return value of thunk creator
   }, [dispatch, homeId]);
 
-  return (
-    <>
-      {bookings && (
-        <div className="booking-list-container">
-          <h1 className="booking-list-title">Tasks for this home</h1>
-          <ul className="booking-list">
-            {sortedBookings && sortedBookings?.map(({ id }) => {
-              return <BookingDetail key={id} homeId={homeId} bookingId={id} />;
-            })}
-          </ul>
-        </div>
-      )}
-    </>
-  );
+  if (bookings.length > 0) {
+    return (
+      <div className="booking-list-container">
+        <>
+          {bookings && (
+            <div className="booking-list-container">
+              <h1 className="booking-list-title">Tasks for this home</h1>
+              <ul className="booking-list">
+                {sortedBookings && sortedBookings?.map(({ id }) => {
+                  return <BookingDetail key={id} homeId={homeId} bookingId={id} />;
+                })}
+              </ul>
+            </div>
+          )}
+        </>
+      </div>
+    );
+  } else {
+    return null
+  }
+
 };
 
 export default BookingsList;

@@ -46,14 +46,9 @@ const HomeData = () => {
       </div>
     </div>
 
+    <BookingNext />
 
-    <div className="booking-next-container">
-        <BookingNext />
-    </div>
-
-    <div className="booking-list-container">
-        <BookingList />
-    </div>
+    <BookingList />
 
   </div>
 

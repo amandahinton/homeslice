@@ -13,7 +13,6 @@ const BookingsNext = () => {
 
   const events = useSelector(state => state.events)
 
-
   const sortedBookings = bookings.sort((a, b) => {
     if (a.date < b.date) {
       return -1;
@@ -44,25 +43,29 @@ const BookingsNext = () => {
 
   const bookingEvent = bookingData?.eventId // 5
 
-  return (
-    <div className="booking-next-div-content">
-      <h2 className="booking-next-card-header">Next Task</h2>
-      <img className="booking-next-photo" src={events[bookingEvent]?.imageUrl} alt="event" />
-      <h2 className="booking-next-title">{bookingData?.title}</h2>
-      <h4 className="booking-next-date">Complete this by {bookingData?.date}</h4>
-      <p className="booking-next-description">{bookingData?.description}</p>
-      <p className="booking-next-interval">Complete this task every {bookingData?.intervalDays} days</p>
+  if (bookings.length > 0) {
+    return (
+      <div className="booking-next-container">
+        <div className="booking-next-div-content">
+          <h2 className="booking-next-card-header">Next Task</h2>
+          <img className="booking-next-photo" src={events[bookingEvent]?.imageUrl} alt="event" />
+          <h2 className="booking-next-title">{bookingData?.title}</h2>
+          <h4 className="booking-next-date">Complete this by {bookingData?.date}</h4>
+          <p className="booking-next-description">{bookingData?.description}</p>
+          <p className="booking-next-interval">Complete this task every {bookingData?.intervalDays} days</p>
 
-      <div className="booking-next-div-buttons">
-        <div className="bookingChangeButtonsDiv">
-          <button className="secondaryButton" onClick={destroyBooking}>Remove task</button>
-          <BookingEditFormModal bookingId={bookingData?.id} />
+          <div className="booking-next-div-buttons">
+            <div className="bookingChangeButtonsDiv">
+              <button className="secondaryButton" onClick={destroyBooking}>Remove task</button>
+              <BookingEditFormModal bookingId={bookingData?.id} />
+            </div>
+          </div>
         </div>
-      </div>
-
-    </div>
-
-  );
+      </div >
+    );
+  } else {
+    return null
+  }
 };
 
 export default BookingsNext;
