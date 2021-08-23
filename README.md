@@ -54,6 +54,32 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
 
 ## Code Highlights
 
+* Up and down for Booking seeder to dynamically renew demo user data
+      ```
+      up: async (queryInterface, Sequelize) => {
+
+        const [homes, metadata] = await queryInterface.sequelize.query(
+          `SELECT "Homes"."id" FROM "Homes" JOIN "Users" ON "Homes"."userId" = "Users"."id" WHERE username = 'guest';`
+        );
+        const demoHome1 = homes[0]
+        const demoHome2 = homes[1]
+
+        return queryInterface.bulkInsert(
+          'Bookings',
+      \\...
+
+      down: async (queryInterface, Sequelize) => {
+        const [guestHomes, metadata] = await queryInterface.sequelize.query(
+          `SELECT DISTINCT "homeId" FROM "Bookings" JOIN "Homes" ON "Bookings"."homeId" = "Homes"."id" JOIN "Users" ON "Homes"."userId" = "Users"."id" WHERE username = 'guest';`
+        );
+        const Op = Sequelize.Op;
+        const idArray = guestHomes.map(home => home.homeId);
+        return queryInterface.bulkDelete('Bookings', {
+          homeId: { [Op.in]: idArray}
+        }, {});
+      }
+      ```
+
 * Component for next task on /homes/:id
       ``` js
       const BookingsNext = () => {
