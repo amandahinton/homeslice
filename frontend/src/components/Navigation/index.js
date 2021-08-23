@@ -39,19 +39,9 @@ function Navigation({ isLoaded }) {
       <div className="navLinks">
         {isLoaded && pageLinks}
       </div>
-      {/* <div className="navLinks">
-        <div className="pageNavLink">
-          <NavLink activeStyle={{ color: 'orange' }} exact to="/homes">Your home  </NavLink>
-        </div>
-        <div className="pageNavLink">
-          <NavLink activeStyle={{ color: 'orange' }} exact to="/events/1">Add tasks  </NavLink>
-        </div>
-      </div> */}
-
       <div className="logoNavLink">
         <NavLink exact to="/"><img className="navLogo" src="/homeslice_logo.png" alt="logo" /></NavLink>
       </div>
-
       <div  className="buttonNavLinks">
           {isLoaded && sessionLinks}
       </div>
