@@ -22,8 +22,11 @@ const HomeData = () => {
 
   const destroyHome = (e) => {
     e.preventDefault();
-    window.confirm("BEWARE! This is strong medicine. Are you sure you want to permanently delete this home and all of its tasks?")
-    dispatch(deleteHome(id));
+
+    const confirmReply = window.confirm("BEWARE! This is strong medicine. Are you sure you want to permanently delete this home and all of its tasks?")
+    if (confirmReply === true) {
+      dispatch(deleteHome(id));
+    }
     history.push("/homes")
   };
 
