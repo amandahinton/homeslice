@@ -55,7 +55,8 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
 ## Code Highlights
 
 * Up and down for Booking seeder to dynamically renew demo user data
-      ```
+
+      ``` js
       up: async (queryInterface, Sequelize) => {
 
         const [homes, metadata] = await queryInterface.sequelize.query(
@@ -81,6 +82,7 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
       ```
 
 * Component for next task on /homes/:id
+
       ``` js
       const BookingsNext = () => {
         const dispatch = useDispatch();
@@ -145,6 +147,7 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
       ```
 
 * Component for new home form on /homes
+
       ``` js
       const HomeAddForm = () => {
         const sessionUser = useSelector(state => state.session.user);
