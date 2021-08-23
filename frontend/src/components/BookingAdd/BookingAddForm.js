@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory} from "react-router-dom";
 import { postBooking } from "../../store/bookingsReducer";
 import "../booking.css";
 import "../../context/Modal.css";
@@ -17,6 +17,7 @@ const BookingAddForm = ({homes, events}) => {
   const [errors, setErrors] = useState([]);
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const reset = () => {
     setDate("");
@@ -39,7 +40,7 @@ const BookingAddForm = ({homes, events}) => {
 
     await dispatch(postBooking(newBooking));       // returns newBooking from bookingReducer thunk
     reset();
-    window.location.reload();
+    history.push(`/homes/${homeId}`)
   };
 
   useEffect(() => {

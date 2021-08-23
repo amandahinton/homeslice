@@ -48,10 +48,7 @@ const HomeData = () => {
 
     <BookingNext />
 
-
-    <div className="booking-list-container">
-        <BookingList />
-    </div>
+    <BookingList />
 
   </div>
 
