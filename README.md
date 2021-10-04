@@ -12,7 +12,7 @@ Homeslice can be found at: https://homesliceapp.herokuapp.com/
   3. Run the command "npm start" from both the frontend and backend directories to launch the servers
 
 ## Technologies Used
-* Javascript
+* JavaScript
 * Express
 * React
 * Redux
