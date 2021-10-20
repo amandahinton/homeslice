@@ -19,35 +19,46 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+
   return (
-    <>
-      <Navigation isLoaded={isLoaded} />
+    < >
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <Splash />
+            <div className="splashDiv">
+              <Navigation isLoaded={isLoaded}  />
+                <Splash />
+              <Footer isSplash={true} />
+            </div>
           </Route>
-          <Route path="/events">
-            <EventsList />
-          </Route>
-          <Route path="/homes/:id/edit">
-            <HomeLoader />
-          </Route>
-          <Route path="/homes/:id/bookings">
-            <BookingList />
-          </Route>
-          <Route exact path="/homes/new">
-            <HomeAdd />
-          </Route>
-          <Route path="/homes/:id">
-            <HomeData />
-          </Route>
-          <Route exact path="/homes">
-            <HomesList />
+          <Route>
+            <Navigation isLoaded={isLoaded} />
+            <Switch>
+              <Route path="/events">
+                <EventsList />
+              </Route>
+              <Route path="/homes/:id/edit">
+                <HomeLoader />
+              </Route>
+              <Route path="/homes/:id/bookings">
+                <BookingList />
+              </Route>
+              <Route exact path="/homes/new">
+                <HomeAdd />
+              </Route>
+              <Route path="/homes/:id">
+                <HomeData />
+              </Route>
+              <Route exact path="/homes">
+                <HomesList />
+              </Route>
+            </Switch>
+            <Footer isSplash={false} />
           </Route>
         </Switch>
       )}
-      <Footer />
+
+
     </>
   );
 }
