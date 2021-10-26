@@ -1,10 +1,25 @@
-/* TODO Add site wide styles */
 * {
   font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
+body {
+  margin: 0px;
+}
+
 #root {
   background-color: #f5f8f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.splashDiv {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.screen-footer {
+  margin: 40px 0 0;
 }
 
 h1 {
@@ -151,15 +166,27 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: url(./components/Splash/splash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-grow: 2;
+  /* min-height: 80vh; */
+
 }
+
 
 .homepage-text  {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 25px;
+  /* opacity: 0.0 - 1.0; */
   width: 50%;
+  background-color: #f5f8f9;
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 500px;
 }
 
 .homepage-title, .homepage-description, .homepage-value {
@@ -195,7 +222,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   background-color: white;
-  margin: 40px 0 0;
+  /* margin: 40px 0 0; */
 }
 
 .footerText {
