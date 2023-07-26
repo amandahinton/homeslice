@@ -46,7 +46,7 @@ See full feature list, user stories, and more at: https://github.com/amandahinto
 ![](https://github.com/amandahinton/homeslice/blob/main/design/homeslice_brand_style.png)
 
 ## Challenges and Learnings
-* LearningRedux and Thunk on the fly, as needed to implement
+* Learning Redux and Thunk on the fly, as needed to implement
 * Limited time constraints: build an app in one week
 * Waiting until all of the required data has been returned before using it
 * Managing state
