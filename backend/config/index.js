@@ -1,6 +1,7 @@
 module.exports = {
   environment: process.env.NODE_ENV || "development",
   port: process.env.PORT || 5050,
+  host: process.env.HOST || "127.0.0.1",
   db: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
