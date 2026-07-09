@@ -25,7 +25,7 @@ module.exports = {
         },
         {
           title: "Replace water filters",
-          description: "Swap sooner if inidcator light comes on or water taste deteriorates",
+          description: "Swap sooner if indicator light comes on or water taste deteriorates",
           intervalDays: 120,
           imageUrl: "https://cdn.pixabay.com/photo/2020/06/01/22/30/water-5248696_1280.jpg",
         },
