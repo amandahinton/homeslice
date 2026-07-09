@@ -51,7 +51,7 @@ export const fetchABooking = (homeId, bookingId) => async (dispatch) => {
 };
 
 export const postBooking = (payload) => async (dispatch) => {
-  const res = await csrfFetch('/api/homes/:homeId/bookings/new', {
+  const res = await csrfFetch(`/api/homes/${payload.homeId}/bookings/new`, {
     method: 'POST',
     body: JSON.stringify(payload),
   });

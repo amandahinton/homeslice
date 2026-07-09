@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Redirect } from 'react-router-dom';
 import HomeEditFormModal from "../HomeEdit"
 import { fetchHomes, deleteHome } from '../../store/homesReducer';
 import BookingList from '../BookingList';
@@ -12,13 +12,19 @@ const HomeData = () => {
   const history = useHistory();
   useSelector(state => Object.values(state.homes))
 
+  const [homesLoaded, setHomesLoaded] = useState(false);
+
   useEffect(() => {
-    dispatch(fetchHomes());
+    dispatch(fetchHomes()).then(() => setHomesLoaded(true));
   }, [dispatch]);
 
   const { id } = useParams();
 
   const homeData = useSelector((state) => state.homes[id]);
+
+  if (homesLoaded && !homeData) {
+    return <Redirect to="/homes" />;
+  }
 
   const destroyHome = (e) => {
     e.preventDefault();
