@@ -5,6 +5,9 @@ services:
     plan: free
     region: virginia # colocated with the Neon database (AWS us-east-1)
     autoDeploy: true
+    domains:
+      - homeslice.app
+      - www.homeslice.app
     envVars:
       - key: NODE_ENV
         value: production

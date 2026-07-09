@@ -2,7 +2,7 @@
 
 Homeslice is an app for homeowners to manage maintenance and repair (M+R) activities for their home/s. Users can subscribe to suggested routine M+R events or create their own custom tasks. Now homeowners can stay on top of the recurring needs of the property—-from roof inspection to gutter cleaning to appliance upkeep—-extending and protecting the value and safety of their home.
 
-Homeslice can be found at: https://homeslice.onrender.com/ (free tier: the first request after idle takes ~1 minute to wake the server)
+Homeslice can be found at: https://homeslice.app/ (free tier: the first request after idle takes ~1 minute to wake the server)
 
 ## Development
 * You can read more about the project using the wiki located at: https://github.com/amandahinton/homeslice
