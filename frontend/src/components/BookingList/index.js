@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import BookingDetail from '../BookingDetail';
 import { fetchBookings } from '../../store/bookingsReducer';
+import { fetchHomes } from '../../store/homesReducer';
 import "../booking.css"
 
 const BookingsList = () => {
@@ -23,9 +24,21 @@ const BookingsList = () => {
 
   const { id : homeId} = useParams();
 
+  const home = useSelector(state => state.homes[homeId]);
+
+  const [homesLoaded, setHomesLoaded] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchHomes()).then(() => setHomesLoaded(true));
+  }, [dispatch]);
+
   useEffect(() => {
     dispatch(fetchBookings(homeId));      // dispatch return value of thunk creator
   }, [dispatch, homeId]);
+
+  if (homesLoaded && !home) {
+    return <Redirect to="/homes" />;
+  }
 
   if (bookings.length > 0) {
     return (
