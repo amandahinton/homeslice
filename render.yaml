@@ -3,6 +3,7 @@ services:
     name: homeslice
     runtime: docker
     plan: free
+    region: virginia # colocated with the Neon database (AWS us-east-1)
     autoDeploy: true
     envVars:
       - key: NODE_ENV
